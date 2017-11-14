@@ -21,8 +21,10 @@ get_header();
 							<?php $shownote_soundcloud = get_post_meta ( $postid, 'bbshownotes_soundcloud', true ); ?>
 							<?php $shownote_quote = get_post_meta( $postid, 'bbshownotes_top_quote', true ); ?>
 							<?php $shownote_quoteauthor = get_post_meta( $postid, 'bbshownotes_quote_author', true ); ?>
+							<?php $shownote_quoteauthortwitter = get_post_meta( $postid, 'bbshownotes_quote_author_twitter', true ); ?>
 							<?php $shownote_topics = get_post_meta( $postid, 'bbshownotes_topics', true ); ?>
 							<?php $shownote_resources = get_post_meta( $postid, 'bbshownotes_resources', true ); ?>
+							<?php $fullwidth_optin = get_post_meta( get_the_ID(), 'bbshownotes_optin_select', true ); ?>
 
 						<header class="entry-header">
 
@@ -48,8 +50,19 @@ get_header();
 										<?php echo $shownote_soundcloud; ?>
 									</div>
 									<div class="col-md-8 shownote_intro">
-										<div class="shownote_quote">"<?php echo $shownote_quote; ?>"</div>
-										<div class="shownote_quoteauthor">- <?php echo $shownote_quoteauthor; ?></div>
+										<?php if ( !empty( $shownote_quote ) ) { ?>
+											<div class="shownote_quote">"<?php echo $shownote_quote; ?>"</div>
+											<div class="shownote_quoteauthor">- <?php echo $shownote_quoteauthor; ?></div>
+											<div class="shownote_quote_tweet">
+												<?php if ( !empty( $shownote_quoteauthortwitter ) ) { ?>
+														<a href="http://twitter.com/home?status=&quot;<?php echo $shownote_quote; ?>&quot; - @<?php echo $shownote_quoteauthortwitter; ?> via <?php echo get_permalink(); ?>" target="_blank"><img src="/wp-content/themes/beingboss2018/img/Twitter-icon.png"></a>
+												<?php	}
+													else { ?>
+														<a href="http://twitter.com/home?status=&quot;<?php echo $shownote_quote; ?>&quot; - <?php echo $shownote_quoteauthor; ?> via <?php echo get_permalink(); ?>" target="_blank"><img src="/wp-content/themes/beingboss2018/img/Twitter-icon.png"></a>
+												<?php	}
+												?>
+											</div>
+										<?php } ?>
 										<div class="shownote_description"><?php the_content(); ?></div>
 									</div>
 								</div>
@@ -57,7 +70,9 @@ get_header();
 
 						</div>
 
-						<div class="optinwrapper" style="background: #eaeaea;">optin</div>
+						<?php if ( !empty( $fullwidth_optin ) ) { ?>
+							<div class="optinwrapper" style="background: #eaeaea;"><?php echo apply_filters('the_content', get_post_field('post_content', $fullwidth_optin)); ?></div>
+						<?php } ?>
 
 						<div class="container">
 
@@ -65,51 +80,69 @@ get_header();
 								<div class="row">
 									<div class="col-md-8">
 
-										<h2>TOPICS DISCUSSED IN THIS EPISODE:</h2>
-										<div class="shownote_topics"><?php echo $shownote_topics; ?></div>
-			
-										<h3 class="gray">RESOURCES DISCUSSED IN THIS EPISODE</h3>
-										<div class="shownote_resources"><?php echo $shownote_resources; ?></div>
-									
-										<?php $guestdetails = get_post_meta( get_the_ID(), 'bbshownotes_morefrom', true );
+										<?php if ( !empty( $shownote_topics ) ) { ?>
+											<h2>TOPICS DISCUSSED IN THIS EPISODE:</h2>
+											<div class="shownote_topics"><?php echo $shownote_topics; ?></div>
+										<?php } ?>		
+										
+										<?php if ( !empty( $shownote_resources ) ) { ?>
+											<h3 class="gray">RESOURCES DISCUSSED IN THIS EPISODE</h3>
+											<div class="shownote_resources"><?php echo $shownote_resources; ?></div>
+										<?php } ?>	
+										
+										<?php $guestdetails = get_post_meta( get_the_ID(), 'bbshownotes_morefrom', true ); ?>
+										
+										<?php if ( !empty( $guestdetails ) ) { ?>
+											<?php foreach ( (array) $guestdetails as $key => $entry ) {
 
-											foreach ( (array) $guestdetails as $key => $entry ) {
+													$guestname = $guestinfo = '';
 
-												$guestname = $guestinfo = '';
+													if ( isset( $entry['bbshownotes_guestname'] ) ) {
+														$guestname = esc_html( $entry['bbshownotes_guestname'] );
+													}
 
-												if ( isset( $entry['bbshownotes_guestname'] ) ) {
-													$guestname = esc_html( $entry['bbshownotes_guestname'] );
-												}
+													if ( isset( $entry['bbshownotes_guestinfo'] ) ) {
+														$guestinfo = wpautop( $entry['bbshownotes_guestinfo'] );
+													}
+												
+													echo "<h3 class='gray'>MORE FROM ";
+													echo $guestname;
+													echo "</h3>";
+													echo "<div class='shownote_guestinfo'>";
+													echo $guestinfo;
+													echo "</div>";
+												} 
+											?>
+										<?php } ?>
 
-												if ( isset( $entry['bbshownotes_guestinfo'] ) ) {
-													$guestinfo = wpautop( $entry['bbshownotes_guestinfo'] );
-												}
-											
-												echo "<h3 class='gray'>MORE FROM ";
-												echo $guestname;
-												echo "</h3>";
-												echo "<div class='shownote_guestinfo'>";
-												echo $guestinfo;
-												echo "</div>";
-											} 
-										?>
-
-										<h3 class="gray">PIN IT:</h3>
-										<div class="shownote_pinit"><a href="http://pinterest.com/pin/create/button/?url=<?php echo get_permalink(); ?>&description=<?php the_title(); ?>"><?php cmb2_bbshownotes_pinterest_images( 'bbshownotes_pinitimages', 'medium' ); ?></a></div>
-
+										<h3 class='gray'>MORE FROM KATHLEEN</h3>
+										<?php echo do_shortcode('[content_block id=9674 slug=more-from-kathleen]'); ?>
+										
+										<h3 class='gray'>MORE FROM EMILY</h3>
+										<?php echo do_shortcode('[content_block id=9675 slug=more-from-emily]'); ?>
+										
+										<?php $shownote_pinterest = get_post_meta( $postid, 'bbshownotes_pinitimages', true ); ?>
+										<?php if ( !empty( $shownote_pinterest ) ) { ?>
+											<h3 class="gray">PIN IT:</h3>
+											<div class="shownote_pinit"><?php cmb2_bbshownotes_pinterest_images( 'bbshownotes_pinitimages', 'large' ); ?></div>
+										<?php } ?>
+										
 									</div>
 									<div class="col-md-4">
 										<div class="shownote_sponsors">
-										<?php
-											$sponsor_list = get_post_meta( get_the_ID(), 'bbshownotes_sponsor_select', true );
-											
-											if ($sponsor_list) {
-												echo "<h5 class='lightgray'>BROUGHT TO YOU BY:</h5>";
-												foreach ( $sponsor_list as $sponsor ) { 
-															echo get_the_post_thumbnail( $sponsor );
+											<?php
+												$sponsor_list = get_post_meta( get_the_ID(), 'bbshownotes_sponsor_select', true );
+												
+												if ($sponsor_list) {
+													echo "<h5 class='lightgray'>BROUGHT TO YOU BY:</h5>";
+													foreach ( $sponsor_list as $sponsor ) { 
+																echo get_the_post_thumbnail( $sponsor );
+													}
 												}
-											}
-										?>
+											?>
+										</div>
+										<div class="shownote_subscribe">
+											<?php echo do_shortcode('[content_block id=9667 slug=shownote-sidebar-subscribe]'); ?>
 										</div>
 									</div>
 								</div>
@@ -124,6 +157,9 @@ get_header();
 						</div>
 						
 						<footer class="entry-footer" style="background: #eaeaea;">
+							<div class="container pagesection80">
+								<h2 class="center">YOU MAY ALSO LIKE</h2>
+								<hr class="short">
 							<?php $postcat = get_the_category( $post->ID ); ?>
 							
 							<?php
@@ -132,6 +168,7 @@ get_header();
 								$related_args = array(
 										'post_type' => 'post',
 										'posts_per_page' => 3,
+										'post__not_in' => array($post->ID),
 										'orderby' => 'rand',
 								);
 								
@@ -139,19 +176,28 @@ get_header();
 
 								// The Loop
 								if ( $related_query->have_posts() ) {
-									echo '<ul>';
+									echo '<div class="relatedpostsection">';
 									while ( $related_query->have_posts() ) {
 										$related_query->the_post();
-										echo '<li>' . get_the_title() . '</li>';
+							?>
+										<div class="relatedpostbox">
+											<div class="relatedpostimage"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('archive-thumb'); ?></a></div>
+											<div class="relatedpostbottom">
+												<img src="http://beingboss.staging.wpengine.com/wp-content/uploads/2017/06/BBClubhouse_SecretEpisodes.png">
+												<h5><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span class="relatedposttitle"> <?php the_title(); ?></span></a></h5>
+												<a href="<?php the_permalink(); ?>" class="relatedpostlistennow">READ NOW >></a>
+											</div>
+										</div>
+							<?php
 									}
-									echo '</ul>';
+									echo '</div>';
 									/* Restore original Post Data */
 									wp_reset_postdata();
 								} else {
 									// no posts found
 								}
 							?>
-							
+							</div>
 
 						</footer><!-- .entry-footer -->
 

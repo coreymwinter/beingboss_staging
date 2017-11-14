@@ -20,15 +20,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="row">
 
-				<div class="col-md-5">
+				<div class="col-md-5 footer-subscribe-left">
 
-					<img src="/wp-content/themes/beingboss2018/img/Footer_HeadphonesBoss.png" style="margin-top: -100px; max-width: 250px;">
+					<img src="/wp-content/themes/beingboss2018/img/Footer_HeadphonesBoss.png">
 
 				</div><!--col end -->
-				<div class="col-md-7">
+				<div class="col-md-7 footer-subscribe-right">
 					<div class="pagesection">
-						<p class="brandon xxmedium">CREATIVE + ENTREPRENEUR</p>
-						<p class="medium italic">Podcast notifications + episode extras to help you do the work.</p>
+						<p class="brandon large">CREATIVE + ENTREPRENEUR</p>
+						<p class="xmedium italic">Podcast notifications + episode extras to help you do the work.</p>
 						<?php if (function_exists('tve_leads_form_display')) { tve_leads_form_display(0, 9514); } ?>
 					</div>
 				</div><!--col end -->
@@ -80,8 +80,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- #page we need this extra closing tag here -->
 
+
+
+
 <?php wp_footer(); ?>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<script src="/wp-content/themes/beingboss2018/drawer/drawer.min.js" charset="utf-8"></script>
+<script>
+    jQuery(document).ready(function() {
+        jQuery('.drawer').drawer();
+    });
+</script>
 </body>
 
 </html>

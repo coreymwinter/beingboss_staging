@@ -78,6 +78,11 @@ add_action( 'widgets_init', 'footer_widgets_init' );
 
 
 
+add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'drawer drawer--right' ) );
+} );
+
+
 
 
 

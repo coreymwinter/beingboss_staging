@@ -8,7 +8,13 @@
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
+$postid = get_the_ID();
+$toppadding = get_post_meta( $postid, 'bbpage_top_padding', true );
+$pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 ?>
+<!-- custom css -->
+<style><?php echo $pagecss; ?></style>
+<!-- custom css -->
 
 <div class="wrapper" id="full-width-page-wrapper">
 
@@ -23,7 +29,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-							<?php $postid = get_the_ID(); ?>
+
 							<?php $header_image = get_post_meta( $postid, 'bbpage_header_image', true ); ?>
 							<?php $header_text = get_post_meta( $postid, 'bbpage_header_text', true ); ?>							
 
@@ -37,7 +43,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 							</header><!-- .entry-header -->
 
-							<div class="entry-content">
+							<div class="entry-content" style="padding-top:<?php echo $toppadding; ?>px">
 
 								<?php the_content(); ?>
 

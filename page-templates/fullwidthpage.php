@@ -9,13 +9,19 @@
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
+$postid = get_the_ID();
+$toppadding = get_post_meta( $postid, 'bbpage_top_padding', true );
+$pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 ?>
+<!-- custom css -->
+<style><?php echo $pagecss; ?></style>
+<!-- custom css -->
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
-
-		<div class="row">
+	<div class="container-fluid" id="content">
+		
+		<div class="row" style="margin: 0;">
 
 			<div class="col-md-12 content-area" id="primary">
 
@@ -23,16 +29,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+						<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
+							<div class="entry-content" style="padding-top:<?php echo $toppadding; ?>px">
 
-							comments_template();
+								<?php the_content(); ?>
 
-						endif;
-						?>
+							</div><!-- .entry-content -->
+
+							<footer class="entry-footer">
+
+
+							</footer><!-- .entry-footer -->
+
+						</article><!-- #post-## -->
 
 					<?php endwhile; // end of the loop. ?>
 
