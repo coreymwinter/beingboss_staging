@@ -8,6 +8,8 @@
 <<<<<<< HEAD
  Version:      0.8.1
 =======
+ Version:      0.7.1
+>>>>>>> 439da828ed21369a45e4c16d50874fd572ea227b
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  beingboss2018
@@ -2868,6 +2870,7 @@ a.vacationitemreadmore:hover {
 	text-align: center; 
 	padding: 15px 0;
 }
+<<<<<<< HEAD
 
 .resourcechild img {
 	clear: both;
@@ -3990,3 +3993,5 @@ input#inscription_checkbox.input-checkbox {
 }
 
 
+=======
+>>>>>>> 439da828ed21369a45e4c16d50874fd572ea227b
