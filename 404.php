@@ -12,7 +12,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
 
-<div class="wrapper" id="404-wrapper">
+<div class="wrapper" id="page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
@@ -24,52 +24,16 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 					<section class="error-404 not-found">
 
-						<header class="page-header">
-
-							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.',
-							'understrap' ); ?></h1>
-
-						</header><!-- .page-header -->
-
 						<div class="page-content">
 
-							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?',
-							'understrap' ); ?></p>
+							<div class="ontainer pagesection80">
+								<div class="center">
+									<div class="error-number"><img src="http://beingboss.club/wp-content/uploads/2016/03/404oops.png"></div>
+									<p class="xxmedium">Well that's sure awkward. Please excuse us.</p>
+									<p class="xxmedium"><a href="http://www.beingboss.club">Go to home >></a></p>
+								</div>
+							</div>
 
-							<?php get_search_form(); ?>
-
-							<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-							<?php if ( understrap_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-
-								<div class="widget widget_categories">
-
-									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'understrap' ); ?></h2>
-
-									<ul>
-										<?php
-										wp_list_categories( array(
-											'orderby'    => 'count',
-											'order'      => 'DESC',
-											'show_count' => 1,
-											'title_li'   => '',
-											'number'     => 10,
-										) );
-										?>
-									</ul>
-
-								</div><!-- .widget -->
-
-							<?php endif; ?>
-
-							<?php
-
-							/* translators: %1$s: smiley */
-							$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'understrap' ), convert_smilies( ':)' ) ) . '</p>';
-							the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-							the_widget( 'WP_Widget_Tag_Cloud' );
-							?>
 
 						</div><!-- .page-content -->
 

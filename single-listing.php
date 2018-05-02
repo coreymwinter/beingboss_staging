@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single listings.
  *
  * @package understrap
  */
@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<div class="wrapper" id="shownote-wrapper">
+<div class="wrapper" id="listing-single">
 
 	<div class="container-fluid" id="content" tabindex="-1">
 
@@ -32,9 +32,29 @@ get_header();
 
 								<?php the_title( '<h1 class="shownote-title">', '</h1>' ); ?>
 
-								<div class="shownote entry-meta">
+								<?php 
 
-									<?php echo get_the_date(); ?>
+									$author_id = get_the_author_meta('ID');
+
+									$info = get_user_meta($author_id, 'bbuser_directory_level', true);
+
+							        //get all items of that user
+							        $args5 = array(
+							                'author' => $author_id,
+							                'post_type' => 'listing',
+							        );
+
+							        $items = get_posts($args5);
+
+							        foreach ($items as $item) {
+							        	if ($info == 'mid') {
+							        		echo $info;
+							        	}
+							        }
+
+								?>
+
+								<div class="shownote entry-meta">
 
 								</div><!-- .entry-meta -->
 
@@ -121,11 +141,6 @@ get_header();
 											?>
 										<?php } ?>
 
-										<h3 class='gray'>MORE FROM KATHLEEN</h3>
-										<?php echo do_shortcode('[content_block slug=more-from-kathleen]'); ?>
-										
-										<h3 class='gray'>MORE FROM EMILY</h3>
-										<?php echo do_shortcode('[content_block slug=more-from-emily]'); ?>
 										
 										<?php $shownote_pinterest = get_post_meta( $postid, 'bbshownotes_pinitimages', true ); ?>
 										<?php if ( !empty( $shownote_pinterest ) ) { ?>

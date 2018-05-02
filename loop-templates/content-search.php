@@ -6,35 +6,17 @@
  */
 
 ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
 
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-		'</a></h2>' ); ?>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-
-			<div class="entry-meta">
-
-				<?php understrap_posted_on(); ?>
-
-			</div><!-- .entry-meta -->
-
-		<?php endif; ?>
-
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-
-		<?php the_excerpt(); ?>
-
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
-</article><!-- #post-## -->
+<div class="relatedpostbox" id="post-<?php the_ID(); ?>">
+	<?php $post_thumbnail = get_the_post_thumbnail( get_the_ID(), 'archive-thumb'); ?>
+	<?php if ( $post_thumbnail ) { ?>
+		<div class="relatedpostimage"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo $post_thumbnail; ?></a></div>
+	<?php } else { ?>
+		<div class="relatedpostimage"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="https://beingboss.club/wp-content/uploads/2017/12/search-results-default.jpg"></a></div>
+	<?php } ?>
+	<div class="relatedpostbottom">
+		<h5><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span class="relatedposttitle"> <?php the_title(); ?></span></a></h5>
+		<a href="<?php the_permalink(); ?>" class="relatedpostlistennow">READ MORE >></a>
+	</div>
+</div>

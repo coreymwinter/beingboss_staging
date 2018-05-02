@@ -54,16 +54,22 @@ get_header();
 
 									</div>
 									
-									<div class="col-md-8">
+									<div class="col-md-8 articlebody">
 										
 										<?php the_content(); ?>
 										
 										<div class="author-box">
-											<div class="leftside" style="background-image: url('<?php echo get_the_author_meta('bb_customavatar'); ?>');"></div>
+											<?php $author_custom_image = get_the_author_meta('bb_customavatar'); ?>
+											<?php if ( !empty( $author_custom_image ) ) { ?>
+												<div class="leftside" style="background-image: url('<?php echo $author_custom_image; ?>');"></div>
+											<?php }
+												else { ?>
+												<div class="leftside" style="background-image: url('<?php echo get_avatar_url( get_the_author_meta( 'ID' ), array('size' => 250) ); ?>');"></div>
+											<?php } ?>
 											<div class="rightside">
 												<div class="capsule pagesection30">
 													<h4><?php the_author_posts_link(); ?></h4>
-													<?php echo nl2br(get_the_author_meta('description')); ?>
+													<?php echo get_the_author_meta('description'); ?>
 												</div>
 											</div>
 										</div>
@@ -94,19 +100,44 @@ get_header();
 							<div class="container pagesection80">
 								<h2 class="center">RELATED CONTENT</h2>
 								<hr class="short">
-							<?php $postcat = get_the_category( $post->ID ); ?>
-							
 							<?php
 								// The Query
 								
-								$related_args = array(
-										'post_type' => array( 'post', 'articles' ),
-										'posts_per_page' => 3,
-										'post__not_in' => array($post->ID),
-										'orderby' => 'rand',
-								);
+								$related_terms = get_the_terms(get_the_ID(), 'related-resources-articles');
+								if ( $related_terms && !is_wp_error( $related_terms ) ) {
+									$term_list = wp_list_pluck( $related_terms, 'slug' );
 								
-								$related_query = new WP_Query( $related_args );
+									$related_args = array(
+											'post_type' => array( 'post', 'articles' ),
+											'posts_per_page' => 3,
+											'post__not_in' => array($post->ID),
+											'orderby' => 'rand',
+											'tax_query' => array(
+												'relation' => 'OR',
+												array(
+													'taxonomy' => 'related-resources',
+													'field'	   => 'slug',
+													'terms'    => $term_list,
+												),
+												array(
+													'taxonomy' => 'related-resources-articles',
+													'field'	   => 'slug',
+													'terms'    => $term_list,
+												),
+											),
+									);
+								
+									$related_query = new WP_Query( $related_args );
+								} else {
+									$related_args = array(
+											'post_type' => array( 'post' ),
+											'posts_per_page' => 3,
+											'post__not_in' => array($post->ID),
+											'orderby' => 'rand',
+									);
+								
+									$related_query = new WP_Query( $related_args );
+								}
 
 								// The Loop
 								if ( $related_query->have_posts() ) {
@@ -117,9 +148,9 @@ get_header();
 										<div class="relatedpostbox">
 											<div class="relatedpostimage"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('archive-thumb'); ?></a></div>
 											<div class="relatedpostbottom">
-												<img src="http://beingboss.staging.wpengine.com/wp-content/uploads/2017/06/BBClubhouse_SecretEpisodes.png">
+												<img src="/wp-content/themes/beingboss2018/img/BBClubhouse_SecretEpisodes.png">
 												<h5><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span class="relatedposttitle"> <?php the_title(); ?></span></a></h5>
-												<a href="<?php the_permalink(); ?>" class="relatedpostlistennow">READ NOW >></a>
+												<a href="<?php the_permalink(); ?>" class="relatedpostlistennow">READ MORE >></a>
 											</div>
 										</div>
 							<?php

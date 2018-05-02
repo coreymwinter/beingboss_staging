@@ -1,12 +1,12 @@
 <?php
 /**
- * Template Name: Full Width - Header Image
+ * Template Name: Squeeze - Header Image
  *
  *
  * @package understrap
  */
 
-get_header();
+get_header( 'squeeze' );
 $container = get_theme_mod( 'understrap_container_type' );
 $postid = get_the_ID();
 $toppadding = get_post_meta( $postid, 'bbpage_top_padding', true );
@@ -16,7 +16,7 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 <style><?php echo $pagecss; ?></style>
 <!-- custom css -->
 
-<div class="wrapper" id="full-width-page-wrapper">
+<div class="wrapper" id="squeeze-wrapper">
 
 	<div class="container-fluid" id="content">
 		
@@ -42,9 +42,7 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 											<?php echo $header_text; ?>
 										</div>
 									</div>
-								</figure>
-
-							</header><!-- .entry-header -->
+								</figure>							</header><!-- .entry-header -->
 
 							<div class="entry-content" style="padding-top:<?php echo $toppadding; ?>px">
 
@@ -71,4 +69,4 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 
 </div><!-- Wrapper end -->
 
-<?php get_footer(); ?>
+<?php get_footer( 'squeeze' ); ?>

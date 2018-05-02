@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive Listing - Results
+ * Archive Listing - Podcast Results
  *
  * 
  * @package   Search_Filter
@@ -28,10 +28,9 @@ if ( $query->have_posts() )
 					</div>
 				<?php endif; ?>
 					<div class="archiveitemcontent">
-						<img src="/wp-content/themes/beingboss2018/img/BB_Icon_Paper.png">
+						<img src="/wp-content/themes/beingboss2018/img/BBClubhouse_SecretEpisodes.png">
 						<h5><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span class="archiveitemtitle"> <?php the_title(); ?></span></a></h5>
-						<p class="archiveitemauthor">BY <?php the_author(); ?></p>
-						<a href="<?php the_permalink(); ?>" class="archiveitemreadmore">READ NOW >></a>
+						<a href="<?php the_permalink(); ?>" class="archiveitemreadmore">LISTEN NOW >></a>
 					</div> 
 			</article>
 			
@@ -45,7 +44,6 @@ if ( $query->have_posts() )
 		
 		<div class="nav-next"><?php previous_posts_link( '<< Previous page' ); ?></div>
 		<div class="nav-previous"><?php next_posts_link( 'Next page >>', $query->max_num_pages ); ?></div>
-
 		<?php
 			/* example code for using the wp_pagenavi plugin */
 			if (function_exists('wp_pagenavi'))

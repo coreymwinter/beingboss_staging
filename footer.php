@@ -29,7 +29,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="pagesection">
 						<p class="brandon large">CREATIVE + ENTREPRENEUR</p>
 						<p class="xmedium italic">Podcast notifications + episode extras to help you do the work.</p>
-						<?php if (function_exists('tve_leads_form_display')) { tve_leads_form_display(0, 9514); } ?>
+						<?php if (function_exists('tve_leads_form_display')) { tve_leads_form_display(0, 10722); } ?>
 					</div>
 				</div><!--col end -->
 
@@ -64,7 +64,35 @@ $container = get_theme_mod( 'understrap_container_type' );
 					</div>
 				</div>
 			</div>
+			<div class="col-md-8">
+			</div>
+
+		</div><!-- row end -->
+		<div class="row bottom-row">
+
+			<div class="col-md-4">
+				<div class="row" id="footer-social">
+					<div class="col-sm-6">
+						<h3>LISTEN</h3>
+						<ul>
+							<li><a href="https://itunes.apple.com/us/podcast/being-boss/id956310359"><img src="/wp-content/themes/beingboss2018/img/FooterIcon_Apple.png"></a></li>
+							<li><a href="https://play.google.com/music/listen?u=0#/ps/Ijagnvf6ruqcxffbhnjxmxl52zy"><img src="/wp-content/themes/beingboss2018/img/FooterIcon_Google.png"></a></li>
+							<li><a href="https://soundcloud.com/beingboss"><img src="/wp-content/themes/beingboss2018/img/FooterIcon_Soundcloud.png"></a></li>
+						</ul>
+					</div>
+					<div class="col-sm-6">
+						<h3>FOLLOW</h3>
+						<ul>
+							<li><a href="https://www.instagram.com/beingbossclub/"><img src="/wp-content/themes/beingboss2018/img/FooterIcon_Instagram.png"></a></li>
+							<li><a href="https://twitter.com/beingbossclub"><img src="/wp-content/themes/beingboss2018/img/FooterIcon_Twitter.png"></a></li>
+							<li><a href="https://www.facebook.com/beingbossclub/"><img src="/wp-content/themes/beingboss2018/img/FooterIcon_Facebook.png"></a></li>
+							<li><a href="https://www.pinterest.com/beingboss/"><img src="/wp-content/themes/beingboss2018/img/FooterIcon_Pinterest.png"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<div class="col-md-3">
+				
 			</div>
 			<div class="col-md-5">
 				<div class="site-info">

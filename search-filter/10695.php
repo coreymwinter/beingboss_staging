@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive Listing - Results
+ * Vacation Listing - Results
  *
  * 
  * @package   Search_Filter
@@ -13,25 +13,25 @@
 if ( $query->have_posts() )
 {
 	?>
-	<div class="archivecontainer">
+	<div class="vacationcontainer">
 	
 		<?php
 		while ($query->have_posts())
 		{
 			$query->the_post();
-			
+				$thrive_shortcode_id = get_post_meta( get_the_ID(), 'bbevents_vacation_video', true );
 			?>
-			<article class="archiveitem" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+			<article class="vacationitem" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 				<?php if ( has_post_thumbnail() ) : ?>
-					<div class="archiveitemimage">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('archive-thumb'); ?></a>
+					<div class="vacationitemimage">
+						<?php the_post_thumbnail('archive-thumb'); ?>
 					</div>
 				<?php endif; ?>
-					<div class="archiveitemcontent">
-						<img src="/wp-content/themes/beingboss2018/img/BB_Icon_Paper.png">
-						<h5><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span class="archiveitemtitle"> <?php the_title(); ?></span></a></h5>
-						<p class="archiveitemauthor">BY <?php the_author(); ?></p>
-						<a href="<?php the_permalink(); ?>" class="archiveitemreadmore">READ NOW >></a>
+					<div class="vacationitemcontent">
+						<h5><span class="vacationitemtitle"> <?php the_title(); ?></span></h5>					
+						<?php if ( !empty( $thrive_shortcode_id ) ) { ?>
+							<span class="tve-leads-two-step-trigger tl-2step-trigger-<?php echo do_shortcode($thrive_shortcode_id); ?>"><p class="vacationitemvideo">VIEW MORE</p></span>				
+						<?php } ?>
 					</div> 
 			</article>
 			

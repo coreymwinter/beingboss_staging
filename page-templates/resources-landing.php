@@ -54,10 +54,13 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 								
 								<div class="container">
 									<div class="resourceparent">
-										<div class="resourceimage">Being Boss Foundations</div>
+										<div class="resourceimage">
+											<img src="/wp-content/themes/beingboss2018/img/Resources_Foundations.png">
+											<div class="resourcetitle">Being Boss foundations</div>
+										</div>
 										<div class="resourceright">
-											<div class="pagesection50 capsule">
-												<p>This is a little bit of text that talks about the cool topics that are found below.</p>
+											<div class="pagesection80 capsule">
+												<p>Build a sustainable business and life you love using our solid framework for success.</p>
 												<a class="showSingle" target="1">VIEW MORE</a>
 											</div>
 										</div>
@@ -85,7 +88,7 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 											while ( $related_query->have_posts() ) {
 												$related_query->the_post();
 									?>
-											<div class="resourcechild"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?> >></a></div>
+											<div class="resourcechild"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="/wp-content/themes/beingboss2018/img/Icon_Resource_Pink.png"><?php the_title(); ?> >></a></div>
 									<?php
 											}
 											echo '</div>';
@@ -97,10 +100,13 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 									?>
 
 									<div class="resourceparent">
-										<div class="resourceimage">Business 101</div>
+										<div class="resourceimage">
+											<img src="/wp-content/themes/beingboss2018/img/Resources_Business101.png">
+											<div class="resourcetitle">Business<br />101</div>
+										</div>
 										<div class="resourceright">
-											<div class="pagesection50 capsule">
-												<p>This is a little bit of text that talks about the cool topics that are found below.</p>
+											<div class="pagesection80 capsule">
+												<p>Get your wheels turning and keep moving forward by starting with the basics.</p>
 												<a class="showSingle" target="2">VIEW MORE</a>
 											</div>
 										</div>
@@ -128,7 +134,7 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 											while ( $related_query->have_posts() ) {
 												$related_query->the_post();
 									?>
-											<div class="resourcechild"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?> >></a></div>
+											<div class="resourcechild"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="/wp-content/themes/beingboss2018/img/Icon_Resource_Blue.png"><?php the_title(); ?> >></a></div>
 									<?php
 											}
 											echo '</div>';
@@ -140,10 +146,13 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 									?>
 
 									<div class="resourceparent">
-										<div class="resourceimage">Taking it to the next level</div>
+										<div class="resourceimage">
+											<img src="/wp-content/themes/beingboss2018/img/Resources_NextLevel.png">
+											<div class="resourcetitle">Taking it to the next level</div>
+										</div>
 										<div class="resourceright">
-											<div class="pagesection50 capsule">
-												<p>This is a little bit of text that talks about the cool topics that are found below.</p>
+											<div class="pagesection80 capsule">
+												<p>Kick shit up a notch (or ten) by mastering your craft and refining the process.</p>
 												<a class="showSingle" target="3">VIEW MORE</a>
 											</div>
 										</div>
@@ -171,7 +180,7 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 											while ( $related_query->have_posts() ) {
 												$related_query->the_post();
 									?>
-											<div class="resourcechild"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?> >></a></div>
+											<div class="resourcechild"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="/wp-content/themes/beingboss2018/img/Icon_Resource_Pink.png"><?php the_title(); ?> >></a></div>
 									<?php
 											}
 											echo '</div>';
@@ -183,10 +192,13 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 									?>
 									
 									<div class="resourceparent">
-										<div class="resourceimage">Living a boss life</div>
+										<div class="resourceimage">
+											<img src="/wp-content/themes/beingboss2018/img/Resources_BossLife.png">
+											<div class="resourcetitle">Living a<br />boss life</div>
+										</div>
 										<div class="resourceright">
-											<div class="pagesection50 capsule">
-												<p>This is a little bit of text that talks about the cool topics that are found below.</p>
+											<div class="pagesection80 capsule">
+												<p class="padbot0">Find real, outside-of-the-office freedom by knowing your needs and staying true to you.</p>
 												<a class="showSingle" target="4">VIEW MORE</a>
 											</div>
 										</div>
@@ -214,7 +226,7 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 											while ( $related_query->have_posts() ) {
 												$related_query->the_post();
 									?>
-											<div class="resourcechild"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?> >></a></div>
+											<div class="resourcechild"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="/wp-content/themes/beingboss2018/img/Icon_Resource_Blue.png"><?php the_title(); ?> >></a></div>
 									<?php
 											}
 											echo '</div>';

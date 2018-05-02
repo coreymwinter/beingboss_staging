@@ -1,0 +1,43 @@
+/**********************
+	DIRECTORY
+**********************/
+
+#listing-single .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#listing-single .container-fluid #primary.col-md-12 {
+	padding: 0;
+}
+
+
+#listing-single {
+	margin-top: 72px;
+}
+
+@media screen and (max-width: 550px) {
+	 #listing-single {
+		margin-top: 80px;
+	}
+}
+
+@media screen and (min-width: 551px) and (max-width: 845px) {
+	#listing-single {
+		margin-top: 62px;
+	}
+}
+
+
+
+/**********************
+	Listing - Single
+**********************/
+
+#listing-single .entry-header {
+	background: #eaeaea;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 80px 0;
+}
