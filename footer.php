@@ -121,6 +121,20 @@ $container = get_theme_mod( 'understrap_container_type' );
         jQuery('.drawer').drawer();
     });
 </script>
+<script>
+	jQuery(document).ready(function(){
+	  jQuery(window).bind('scroll', function() {
+	    var distance = 50;
+	    if (jQuery(window).scrollTop() > distance) {
+	      jQuery('.bg-light').addClass('scrolled');
+	    }
+	    else {
+	      jQuery('.bg-light').removeClass('scrolled');
+	    }
+	  });
+	});
+</script>
+
 </body>
 
 </html>

@@ -10,9 +10,6 @@
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-<!-- custom css -->
-<style>.thrv-content-box {background: #252525;}</style>
-<!-- custom css -->
 
 <div class="wrapper" id="home-wrapper">
 
@@ -32,12 +29,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 							<figure class="bbpage-header book-landing" style="background-image: url('/wp-content/themes/beingboss2018/img/HomeHeader.jpg');">
 									<div class="container">
-										<div class="headertext">
-											<div class="flag">
-												<span class="italic">the Being Boss book</span><br /><span class="brandon">ORDER YOURS TODAY!</span>
-											</div>
-											<img class="bookimage" src="https://beingboss.club/wp-content/themes/beingboss2018/img/BeingBossBookMockup_Paperback_Home.png" alt="" />
-										</div>
+										
 									</div>
 								</figure>
 
@@ -48,6 +40,45 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<?php the_content(); ?>
 								<div class="container">
 									<div class="relatedpostsection">
+										<?php
+												$query_two_args = array(
+														'post_type' => array( 'webinar' ),
+														'posts_per_page' => 1,
+														'tax_query' => array(
+															array(
+																'taxonomy' => 'webinarcategories',
+																'field'	   => 'slug',
+																'terms'    => 'home',
+															),
+														),
+												);
+											
+												$home_query_two = new WP_Query( $query_two_args );
+
+											if ( $home_query_two->have_posts() ) {
+												while ( $home_query_two->have_posts() ) {
+													$home_query_two->the_post();
+													$webinar_link = get_post_meta( get_the_ID(), 'bbwebinar_external_link', true );
+										?>
+													<div class="relatedpostbox">
+														<div class="relatedpostimage">
+															<a href="<?php echo $webinar_link; ?>" target="_blank" title="<?php the_title(); ?>"><?php the_post_thumbnail('archive-thumb'); ?></a>
+															<div class="relatedpostarrow"><span class="relatedpostlabel">FREE TRAINING</span></div>
+														</div>
+														<div class="relatedpostbottom">
+															<img src="/wp-content/themes/beingboss2018/img/Home_Icon_Training.png">
+															<h5><a href="<?php echo $webinar_link; ?>" target="_blank" title="<?php the_title(); ?>"><span class="relatedposttitle"> <?php the_title(); ?></span></a></h5>
+															<a href="<?php echo $webinar_link; ?>" target="_blank" class="relatedpostlistennow">REGISTER NOW >></a>
+														</div>
+													</div>
+										<?php
+												}
+												/* Restore original Post Data */
+												wp_reset_postdata();
+											} else {
+												// no posts found
+											}
+										?>
 										<?php
 												$query_three_args = array(
 														'post_type' => 'post',
@@ -118,45 +149,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 												// no posts found
 											}
 										?>
-										<?php
-												$query_two_args = array(
-														'post_type' => array( 'webinar' ),
-														'posts_per_page' => 1,
-														'tax_query' => array(
-															array(
-																'taxonomy' => 'webinarcategories',
-																'field'	   => 'slug',
-																'terms'    => 'home',
-															),
-														),
-												);
-											
-												$home_query_two = new WP_Query( $query_two_args );
-
-											if ( $home_query_two->have_posts() ) {
-												while ( $home_query_two->have_posts() ) {
-													$home_query_two->the_post();
-													$webinar_link = get_post_meta( get_the_ID(), 'bbwebinar_external_link', true );
-										?>
-													<div class="relatedpostbox">
-														<div class="relatedpostimage">
-															<a href="<?php echo $webinar_link; ?>" target="_blank" title="<?php the_title(); ?>"><?php the_post_thumbnail('archive-thumb'); ?></a>
-															<div class="relatedpostarrow"><span class="relatedpostlabel">FREE TRAINING</span></div>
-														</div>
-														<div class="relatedpostbottom">
-															<img src="/wp-content/themes/beingboss2018/img/Home_Icon_Training.png">
-															<h5><a href="<?php echo $webinar_link; ?>" target="_blank" title="<?php the_title(); ?>"><span class="relatedposttitle"> <?php the_title(); ?></span></a></h5>
-															<a href="<?php echo $webinar_link; ?>" target="_blank" class="relatedpostlistennow">REGISTER NOW >></a>
-														</div>
-													</div>
-										<?php
-												}
-												/* Restore original Post Data */
-												wp_reset_postdata();
-											} else {
-												// no posts found
-											}
-										?>
+										
 									</div>
 									<p class="featuredon" style="padding-top: 50px;">AS FEATURED ON: <img class="aligncenter wp-image-3927 size-full" src="/wp-content/uploads/2017/11/Press_FeaturedLogos.png" alt="" width="974" height="124"></p>
 									<h2 class="center xlarge" style="padding-top: 80px;">ORDER THE BEING BOSS BOOK</h2>
