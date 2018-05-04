@@ -536,6 +536,10 @@ h5, .h5 {
 	font-family: "lust-script",sans-serif;
 }
 
+.serif {
+	font-family: 'PT Serif', serif;
+}
+
 
 
 
@@ -762,13 +766,17 @@ button.tve-froala {
 }
 
 #wrapper-navbar .bg-light {
+	background-color: #fff;
+}
+
+body.home #wrapper-navbar .bg-light {
 	background-color: transparent !important;
 	border-bottom: 1px solid #eaeaea;
 	transition:top 0.5s ease;
   	transition: background-color 0.5s ease;
 }
 
-#wrapper-navbar .bg-light.scrolled {
+body.home #wrapper-navbar .bg-light.scrolled {
   	background-color: #fff !important;
 }
 	
@@ -780,10 +788,76 @@ button.tve-froala {
 
 }
 
-
 #wrapper-navbar .navbar-brand {
 	width: 200px;
 }
+
+#wrapper-navbar .navbar-brand:hover img {
+	visibility: hidden;
+}
+
+#wrapper-navbar .navbar-brand:hover {
+	background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_blue.svg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+body.home #wrapper-navbar .navbar-brand img {
+	visibility: hidden;
+}
+
+body.home #wrapper-navbar .navbar-brand {
+	background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_White.svg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+body.home #wrapper-navbar .navbar-brand.blacklogo img {
+	visibility: visible;
+}
+
+body.home #wrapper-navbar .navbar-brand.blacklogo:hover img {
+	visibility: hidden;
+}
+
+body.home #wrapper-navbar .navbar-brand:hover {
+	background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_Pink.svg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+body.home #wrapper-navbar .navbar-brand.blacklogo:hover {
+	background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_blue.svg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+
+@media screen and (max-width: 1000px) {
+	body.home #wrapper-navbar .bg-light {
+		background-color: #fff !important;
+	}
+
+	body.home #wrapper-navbar .navbar-brand img {
+		visibility: visible;
+	}
+
+	body.home #wrapper-navbar .navbar-brand {
+		background-image: none;
+	}
+
+	body.home #wrapper-navbar .navbar-brand:hover img {
+		visibility: hidden;
+	}
+
+	body.home #wrapper-navbar .navbar-brand:hover {
+		background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_blue.svg');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+}
+
+
 
 .navbar {
 	max-height: 72px;
@@ -820,6 +894,22 @@ button.tve-froala {
 	color: #252525;
 }
 
+body.home .navbar-light .navbar-nav .nav-link {
+	color: #fff;
+}
+
+body.home .navbar-light .navbar-nav .nav-link:hover {
+	color: #252525;
+}
+
+body.home .navbar-light.scrolled .navbar-nav .nav-link {
+	color: #252525;
+}
+
+body.home .navbar-light.scrolled .navbar-nav .nav-link:hover {
+	color: #252525;
+}
+
 .dropdown-toggle::after {
 	display: none;
 }
@@ -843,6 +933,14 @@ button.tve-froala {
 	color: #EC008C;
 }
 
+.drawer-nav .dropdown-menu.show {
+	background: transparent;
+	display: table;
+	width: 100%;
+	padding-left: 15px;
+	position: relative;
+}
+
 .topmenu {
 	display: flex; 
 	justify-content: flex-end;
@@ -858,6 +956,22 @@ button.tve-froala {
 }
 
 .topmenu a:hover {
+	color: #00AEEF;
+}
+
+body.home .navbar-light .topmenu a {
+	color: #fff;
+}
+
+body.home .navbar-light .topmenu a:hover {
+	color: #00AEEF;
+}
+
+body.home .navbar-light.scrolled .topmenu a {
+	color: #252525;
+}
+
+body.home .navbar-light.scrolled .topmenu a:hover {
 	color: #00AEEF;
 }
 	
@@ -886,7 +1000,7 @@ button.tve-froala {
 }
 
 
-.navbar-expand-md .navbar-nav .bb-special-dropdown:hover .dropdown-menu {
+.navbar-expand-md .navbar-nav .bb-special-dropdown.dropdown:hover .dropdown-menu {
 	display: block;
 	width: 500px;
 	left: -200px;
@@ -916,8 +1030,45 @@ button.tve-froala {
 		margin: 0 auto 7px;
 }
 
+body.home .navbar-light .navbar-nav .dropdown-menu .nav-link {
+	color: #252525;
+}
 
+body.home .navbar-light .navbar-nav .bb-special-dropdown .dropdown-menu .nav-link:hover {
+	color: #00AEEF;
+}
 
+.navbar-expand-md .navbar-nav .dropdown:hover .dropdown-menu {
+	display: block;
+	padding: 0;
+}
+
+.navbar-light.navbar-expand-md .navbar-nav .dropdown .dropdown-menu .nav-link {
+	text-align: center;
+    padding: 12px 10px;
+    line-height: 1;
+    height: auto;
+}
+
+.navbar-light.navbar-expand-md .navbar-nav .bb-special-dropdown.dropdown .dropdown-menu .nav-link {
+	text-align: center;
+    padding: 6px 0 0;
+    line-height: 1;
+    height: auto;
+}
+
+.navbar-light.navbar-expand-md .navbar-nav .bb-special-dropdown.dropdown .dropdown-menu .nav-link img {
+	padding-bottom: 5px;
+}
+
+.navbar-light.navbar-expand-md .navbar-nav .dropdown .dropdown-menu .nav-link:hover {
+	background-image: none;
+	background: #fff200;
+}
+
+.navbar-light.navbar-expand-md .navbar-nav .bb-special-dropdown.dropdown .dropdown-menu .nav-link:hover {
+	background: transparent;
+}
 
 
 
@@ -958,10 +1109,19 @@ button.tve-froala {
 	font-family: inherit;
 	font-size: 100%;
 }
-#top-search input[type=search]:hover {
+
+body.home .navbar #top-search input[type=search] {
+	background: url(/wp-content/themes/beingboss2018/img/Icon_Search_White.png) no-repeat 4px center;
+}
+
+body.home .navbar.scrolled #top-search input[type=search] {
+	background: url(/wp-content/themes/beingboss2018/img/Icon_Search.png) no-repeat 4px center;
+}
+
+#top-search input[type=search]:hover, body.home .navbar.scrolled #top-search input[type=search]:hover, body.home .navbar #top-search input[type=search]:hover {
 	background-color: #fff;
 }
-#top-search input[type=search]:focus {
+#top-search input[type=search]:focus, body.home .navbar.scrolled #top-search input[type=search]:focus, body.home .navbar #top-search input[type=search]:focus {
 	width: 130px;
 	padding-left: 32px;
 	color: #252525;
@@ -1152,13 +1312,21 @@ ul#menu-footer-info, ul#menu-footer-content, ul#menu-footer-join-us {
 }
 
 #home-wrapper .headersection {
-	background: url(/wp-content/themes/beingboss2018/img/HomeHeader.jpg);
+	background: url(/wp-content/themes/beingboss2018/img/Header_CEOFaces_3.jpg);
     	background-size: cover;
     	background-position: 0px 0px;
 	background-attachment: fixed;
     	width: 100%;
-    	height: 600px;
+    	height: 725px;
     	display: table;
+    	position: relative;
+}
+
+#home-wrapper .headersection a.home-header-link {
+	width: 100%;
+	height: 100%;
+	display: table;
+	position: absolute;
 }
 
 #home-wrapper .headersection .headertext {
@@ -1166,14 +1334,24 @@ ul#menu-footer-info, ul#menu-footer-content, ul#menu-footer-join-us {
 	top: 0; 
 	bottom: 0; 
 	right: 0; 
-	left: initial; 
+	left: 0; 
 	margin: auto; 
 	display: table; 
-	text-align: right;
+	text-align: center;
+	width: 100%;
+	text-shadow: 5px 5px 12px #252525;
+}
+
+#home-wrapper .headersection .headertext p.serif {
+	line-height: 1.5 !important;
+	padding: 25px 0 50px;
 }
 
 #home-wrapper .headersection .headertext .button-yellow {
-	float: right;
+	float: none;
+    font-size: 18px;
+    text-shadow: none;
+	margin: 50px auto auto;
 }
 
 .thrv-leads-form-box.thrv_wrapper {
@@ -1260,6 +1438,7 @@ a.carousel_link:hover {
 	#home-wrapper .headersection {
 		background-position: -100px 0px;
 		background-attachment: unset;
+		height: 550px;
 	}
 
 	#home-wrapper .headersection .headertext {
@@ -1271,6 +1450,15 @@ a.carousel_link:hover {
     		margin: auto;
     		display: block;
     		text-align: center;
+    		width: 90%;
+	}
+
+	#home-wrapper .headersection .giant {
+		font-size: 46px !important;
+	}
+
+	#home-wrapper .headersection .headertext p.serif {
+		line-height: 1.3 !important;
 	}
 
 	#home-wrapper .headersection .headertext .button-yellow {
@@ -1306,6 +1494,30 @@ a.carousel_link:hover {
     		max-width: 100%;
 	}
 
+	#homepodcasts img {
+		width: 85%;
+		margin: 0 auto 25px;
+		display: block;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	#home-wrapper .headersection {
+		background-position: -100px 0px;
+		background-attachment: unset;
+		height: 600px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#home-wrapper .headersection .giant {
+		font-size: 36px !important;
+	}
+
+	#home-wrapper .headersection .headertext p.serif.large {
+		font-size: 22px !important;
+	}
 }
 
 @media screen and (min-width: 600px) and (max-width: 767px) {
@@ -1313,6 +1525,15 @@ a.carousel_link:hover {
 	#home-wrapper .headersection {
 		background-position: top left;
 		    background-attachment: unset;
+		    height: 600px;
+	}
+
+	#home-wrapper .headersection .headertext {
+		width: 90%;
+	}
+
+	#home-wrapper .headersection .giant {
+		font-size: 52px !important;
 	}
 
 	.home-book-section {
@@ -1341,18 +1562,41 @@ a.carousel_link:hover {
     		max-width: 100%;
 	}
 
+	#homepodcasts img {
+		width: 85%;
+		margin: 0 auto 25px;
+		display: block;
+	}
+
 }
 
 
 @media screen and (min-width: 768px) and (max-width: 849px) {
 	#home-wrapper .headersection {
-		height: 500px;
+		height: 650px;
 		background-position: top center;
 		    background-attachment: unset;
 	}
 
+	#home-wrapper .headersection .headertext {
+		width: 90%;
+	}
+
+	#home-wrapper .headersection .giant {
+		font-size: 52px !important;
+	}
+
 	#home-wrapper .relatedpostbox {
 		width: 200px;
+	}
+
+	#home-wrapper .relatedpostbox .relatedposttitle {
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	#home-wrapper .relatedpostbox a.relatedpostlistennow {
+		font-size: 12px;
 	}
 
 	.home-book-section {
@@ -1390,12 +1634,25 @@ a.carousel_link:hover {
 
 @media screen and (min-width: 850px) and (max-width: 994px) {
 	#home-wrapper .headersection {
-		height: 400px;
+		height: 500px;
 		    background-attachment: unset;
+	}
+
+	#home-wrapper .headersection .giant {
+		font-size: 52px !important;
 	}
 
 	#home-wrapper .relatedpostbox {
 		width: 200px;
+	}
+
+	#home-wrapper .relatedpostbox .relatedposttitle {
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	#home-wrapper .relatedpostbox a.relatedpostlistennow {
+		font-size: 12px;
 	}
 
 	.home-book-section {
@@ -1432,7 +1689,7 @@ a.carousel_link:hover {
 
 @media screen and (min-width: 995px) and (max-width: 1200px) {
 	#home-wrapper .headersection {
-		height: 400px;
+		height: 600px;
 		    background-attachment: unset;
 	}
 
@@ -3956,8 +4213,16 @@ input#inscription_checkbox.input-checkbox {
 
 @-moz-document url-prefix() {
 
-	#home-wrapper .headersection .headertext {
-		top: 150px;
+	@media screen and (max-width: 999px) {
+		#home-wrapper .headersection .headertext {
+			top: 100px;
+		}
+	}
+
+	@media screen and (min-width: 1000px) {
+		#home-wrapper .headersection .headertext {
+			top: 200px;
+		}
 	}
 
 	.bbpage-header .headertext {

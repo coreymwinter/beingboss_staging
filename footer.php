@@ -127,9 +127,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 	    var distance = 50;
 	    if (jQuery(window).scrollTop() > distance) {
 	      jQuery('.bg-light').addClass('scrolled');
+	      jQuery('.navbar-brand').addClass('blacklogo');
 	    }
 	    else {
 	      jQuery('.bg-light').removeClass('scrolled');
+	      jQuery('.navbar-brand').removeClass('blacklogo');
 	    }
 	  });
 	});
