@@ -151,6 +151,9 @@ get_header();
 										<div class="shownote_subscribe">
 											<?php echo do_shortcode('[content_block id=9667 slug=shownote-sidebar-subscribe]'); ?>
 										</div>
+										<div class="shownote_ceoday">
+											<a href="https://courses.beingboss.club/" target="_blank"><img src="/wp-content/themes/beingboss2018/img/CEODAYKITAd300x500_New.png"></a>
+										</div>
 									</div>
 								</div>
 								

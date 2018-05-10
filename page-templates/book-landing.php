@@ -53,8 +53,8 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 
 								<?php the_content(); ?>
 
-								<div class="container hidden">
-									<div class="pagesection80">
+								<div class="container">
+									<div class="pagesection80 padbot0">
 										<div class="row">
 											<div class="col-lg-12">
 												<h2 class="center h1 xlarge">BOOK TOUR</h2>

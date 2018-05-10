@@ -9,8 +9,6 @@ $toppadding = get_post_meta( $postid, 'bbpage_top_padding', true );
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
 	<div class="entry-content" style="padding-top:<?php echo $toppadding; ?>px">
 
 		<?php the_content(); ?>

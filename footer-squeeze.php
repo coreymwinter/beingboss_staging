@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<div class="col-md-5 footer-subscribe-left">
 
-					<img src="/wp-content/themes/beingboss2018/img/Footer_HeadphonesBoss.png">
+					<img src="/wp-content/themes/beingboss2018/img/Footer_HeadphonesBoss2.png">
 
 				</div><!--col end -->
 				<div class="col-md-7 footer-subscribe-right">
@@ -72,6 +72,21 @@ $container = get_theme_mod( 'understrap_container_type' );
         jQuery('.drawer').drawer();
     });
 </script>
+<!-- Drip -->
+<script type="text/javascript">
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = '5427386';
+
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true;
+    dc.src = '//tag.getdrip.com/5427386.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+</script>
+<!-- end Drip -->
 </body>
 
 </html>

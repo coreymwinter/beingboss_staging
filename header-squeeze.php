@@ -65,43 +65,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 						the_custom_logo();
 					} ?><!-- end custom logo -->
 
-				<button type="button" class="drawer-toggle drawer-hamburger">
-                			<span class="sr-only">toggle navigation</span>
-                			<span class="drawer-hamburger-icon"></span>
-				</button>
-				<nav class="drawer-nav" role="navigation">
-					<?php wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							'menu_class'      => 'navbar-nav-mobile',
-							'fallback_cb'     => '',
-							'menu_id'         => 'main-menu-mobile',
-							'walker'          => new WP_Bootstrap_Navwalker(),
-						)
-					); ?>
-				</nav>
-				<!-- The WordPress Menu goes here -->
-				<div class="menuright">
-					<div class="topmenu">
-						<a href="/about">ABOUT</a>
-						<a href="/press">PRESS</a>
-						<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>" id="top-search">
-							<input name="s" type="search" placeholder="Search">
-						</form>
-					</div>
-
-					<?php wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav',
-							'fallback_cb'     => '',
-							'menu_id'         => 'main-menu',
-							'walker'          => new WP_Bootstrap_Navwalker(),
-						)
-					); ?>
-				</div>
+				
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>

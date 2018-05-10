@@ -166,14 +166,24 @@ get_header();
 									<div class="col-md-1"></div>
 									<div class="col-md-4">
 										<?php if ( !empty( $resource_optin ) ) { ?>
-											<div class="optinwrapper">
-								<div class="container">
-									<img class="center" src="/wp-content/themes/beingboss2018/img/Optin_Icon_White.png">
-									<h2 class="center white">DOWNLOAD THIS FREE RESOURCE:<h2>
-									<h2 class="center white"><?php echo get_the_title($resource_optin); ?></h2>
-									<?php echo apply_filters('the_content', get_post_field('post_content', $resource_optin)); ?>
-								</div>
-							</div>										<?php } ?>
+											<?php if ( has_term('sidebar-custom', 'displaystyle', $resource_optin )) { ?>
+												<?php $custom_bg_image = get_the_post_thumbnail_url($resource_optin,'full'); ?>
+												<div class="optinwrapper" style="background-image: url('<?php echo $custom_bg_image; ?>'); background-size: cover;">
+													<div class="container">
+														<?php echo apply_filters('the_content', get_post_field('post_content', $resource_optin)); ?>
+													</div>
+												</div>
+											<?php } else { ?>
+												<div class="optinwrapper">
+													<div class="container">
+														<img class="center" src="/wp-content/themes/beingboss2018/img/Optin_Icon_White.png">
+														<h2 class="center white">DOWNLOAD THIS FREE RESOURCE:<h2>
+														<h2 class="center white"><?php echo get_the_title($resource_optin); ?></h2>
+														<?php echo apply_filters('the_content', get_post_field('post_content', $resource_optin)); ?>
+													</div>
+												</div>
+											<?php } ?>
+										<?php } ?>
 									</div>
 								</div>
 								

@@ -22,14 +22,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<div class="col-md-5 footer-subscribe-left">
 
-					<img src="/wp-content/themes/beingboss2018/img/Footer_HeadphonesBoss.png">
+					<img src="/wp-content/themes/beingboss2018/img/Footer_HeadphonesBoss2.png">
 
 				</div><!--col end -->
 				<div class="col-md-7 footer-subscribe-right">
 					<div class="pagesection">
 						<p class="brandon large">CREATIVE + ENTREPRENEUR</p>
 						<p class="xmedium italic">Podcast notifications + episode extras to help you do the work.</p>
-						<?php if (function_exists('tve_leads_form_display')) { tve_leads_form_display(0, 10722); } ?>
+						<?php echo do_shortcode('[content_block id=11678]'); ?>
 					</div>
 				</div><!--col end -->
 
@@ -42,7 +42,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<footer class="wrapper" id="wrapper-footer">
 	
 	<?php else: ?>
-		<footer class="wrapper" id="wrapper-footer" style="margin-top: 80px;">
+		<footer class="wrapper" id="wrapper-footer">
 		
 <?php endif; ?>
 
@@ -121,6 +121,29 @@ $container = get_theme_mod( 'understrap_container_type' );
         jQuery('.drawer').drawer();
     });
 </script>
+<!-- Drip -->
+<script type="text/javascript">
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = '5427386';
+
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true;
+    dc.src = '//tag.getdrip.com/5427386.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+</script>
+<!-- end Drip -->
+<script>
+		window.onload = onPageLoad();
+		function onPageLoad() {
+		  // document.getElementById("wcdrip_subscribe").checked = true;
+		  jQuery("input[name=wcdrip_subscribe]").attr('checked', true); // Deprecated
+		  jQuery("input[name=wcdrip_subscribe]").prop('checked', true);
+		}
+	</script>
 <script>
 	jQuery(document).ready(function(){
 	  jQuery(window).bind('scroll', function() {
@@ -136,7 +159,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 	  });
 	});
 </script>
-
 </body>
 
 </html>
