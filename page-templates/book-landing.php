@@ -74,25 +74,9 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 								</div>
 								<div class="container" style="margin-bottom: 80px;">
 									<div class="row">
-										<div class="col-md-2"> </div>
-										<div class="col-md-3 right mobilehide"><img src="/wp-content/uploads/2017/09/Press_Brigitte.jpg" alt="" /></div>
-										<div class="col-md-3 alignparent mobilehide">
-											<div class="alignbottom">
-												<h2>MEDIA CONTACT</h2>
-												<p>Brigitte Lyons<br />
-												brigitte@bthinkforward.com<br />
-												<span class="italic"><strong>Not a contact for the podcast</strong></span></p>
-											</div>
-										</div>
-										<div class="col-md-4"> </div>
-									</div>
-									<div class="row mobileshow" style="margin: 0 auto; text-align: center;">
-										<div class="col-md-3"><img src="/wp-content/uploads/2017/09/Press_Brigitte.jpg" alt="" /></div>
-										<div class="col-md-3" style="padding-top: 30px;">
+										<div class="col-md-12 center">
 											<h2>MEDIA CONTACT</h2>
-											<p>Brigitte Lyons<br />
-											brigitte@bthinkforward.com<br />
-											<span class="italic"><strong>Not a contact for the podcast</strong></span></p>
+											<p>hello@beingboss.club</p>
 										</div>
 									</div>
 								</div>

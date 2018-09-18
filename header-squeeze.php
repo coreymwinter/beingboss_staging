@@ -24,6 +24,30 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 	<link href="/wp-content/themes/beingboss2018/drawer/sandbox.css" rel="stylesheet">
 	<link href="/wp-content/themes/beingboss2018/drawer/drawer.min.css" rel="stylesheet">
+
+
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+		<script>
+		window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+		  "palette": {
+		    "popup": {
+		      "background": "#252525",
+		      "text": "#ffffff"
+		    },
+		    "button": {
+		      "background": "#fff200",
+		      "text": "#252525"
+		    }
+		  },
+		  "position": "bottom-right",
+		  "content": {
+		    "message": "Hey boss! This website uses cookies to help us track things like analytics and user preferences.",
+		    "href": "https://beingboss.club/privacy"
+		  }
+		})});
+		</script>
 </head>
 
 <body <?php body_class(); ?>>

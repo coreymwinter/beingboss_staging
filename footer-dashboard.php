@@ -13,52 +13,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_sidebar( 'footerfull' ); ?>
 
-<?php if (! get_post_meta( get_the_ID(), 'bbpage_hide_subscribe', 1 ) )  : ?>
-	<div class="wrapper" id="footer-subscribe">
-
-		<div class="<?php echo esc_attr( $container ); ?>">
-
-			<div class="row">
-
-				<div class="col-md-5 footer-subscribe-left">
-
-					<img src="/wp-content/themes/beingboss2018/img/Footer_HeadphonesBoss2.png">
-
-				</div><!--col end -->
-				<div class="col-md-7 footer-subscribe-right">
-					<div class="pagesection">
-						<p class="brandon large">CREATIVE + ENTREPRENEUR</p>
-						<p class="xmedium italic">Get the scoop on how to be more boss.</p>
-						<form action="https://www.getdrip.com/forms/458596298/submissions" method="post" data-drip-embedded-form="458596298" class="fullwidthform">
-						  <div data-drip-attribute="description"></div>
-						    <div>
-						        <input type="text" id="drip-Name" name="fields[Name]" value="" placeholder="name" />
-						    </div>
-						    <div>
-						        <input type="email" id="drip-email" name="fields[email]" value="" placeholder="email address" />
-						    </div>
-						  <div>
-						    <input type="submit" class="button" value="SUBMIT" data-drip-attribute="sign-up-button" />
-						  </div>
-						</form>
-						<p class="center small padtop15">Subscribing indicates your consent to our <a href="/terms" target="_blank" class="blacklink underline">Terms of Use</a> &amp; <a href="/privacy" target="_blank" class="blacklink underline">Privacy Policy.</a></p>
-					</div>
-				</div><!--col end -->
-
-			</div><!-- row end -->
-
-		</div><!-- container end -->
-
-	</div><!-- pagesection end -->
-	
-	<footer class="wrapper" id="wrapper-footer">
-	
-	<?php else: ?>
-		<footer class="wrapper" id="wrapper-footer">
+<footer class="wrapper" id="wrapper-footer">
 		
-<?php endif; ?>
-
-
 	<div class="<?php echo esc_attr( $container ); ?>">
 
 		<div class="row">

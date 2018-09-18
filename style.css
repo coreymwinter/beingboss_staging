@@ -5,7 +5,7 @@
  Author:       Corey Winter
  Author URI:   http://www.beingboss.club
  Template:     understrap
- Version:      0.8.2
+ Version:      1.5.5
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  beingboss2018
@@ -17,6 +17,8 @@
 /**********************
 	UNIVERSAL
 **********************/
+
+html {background: #252525;}
 
 body {
 	font-family: 'PT Serif', serif;
@@ -43,6 +45,11 @@ p:last-child {
 .imgcenter {
     	margin: 0px auto;
     	display: table;
+}
+
+.iconcenter {
+	margin: 0px auto;
+    display: table !important;
 }
 
 .content {
@@ -91,7 +98,8 @@ figure {
 	margin: 0;
 }
 
-.button, .buybutton, .button-yellow {
+.button, .buybutton, .button-yellow, .button-pink, .btn-primary, .buddypress .buddypress-wrap .generic-button a,
+.button-yellow-blue, .button-yellow-pink, .button-black-pink, .button-pink-black, .button-blue-black, .button-blue {
 	max-width: 85%;
 	margin: 0 auto;
 	text-align: center;
@@ -104,11 +112,42 @@ figure {
 	padding: 10px 50px;
 	display: table;
 	border: 0;
+	text-transform: uppercase;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
-.button-yellow {
+.btn-outline-primary {
+	max-width: 85%;
+	text-align: center;
+	color: #fff;
+	background-color: #252525;
+	border-radius: 10px;
+	font-family: brandon-grotesque, sans-serif;
+	font-size: 14px;
+	font-weight: 900;
+	padding: 10px 50px;
+	border: 0;
+	text-transform: uppercase;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.button-yellow, .button-yellow-blue, .button-yellow-pink {
 	background-color: #FFF200;
 	color: #252525;
+}
+
+.button-pink, .button-pink-black {
+	background-color: #EC008C;
+	color: #fff;
+}
+
+.button-blue, .button-blue-black {
+	background-color: #00AEEF;
+	color: #fff;
 }
 
 .button-short {
@@ -121,8 +160,27 @@ figure {
 	margin: 10px auto;
 }
 
-.button:hover, .buybutton:hover, .button-yellow:hover {
+.button:hover, .buybutton:hover, .button-yellow:hover, .btn-primary:hover, .buddypress .buddypress-wrap .generic-button a:hover, .btn-outline-primary:hover, 
+.button-black-pink:hover, .button-yellow-pink:hover {
 	background-color: #EC008C;
+	color: #fff;
+	cursor: pointer;
+}
+
+.button-pink:hover {
+	background-color: #FFF200;
+	color: #252525;
+	cursor: pointer;
+}
+
+.button-yellow-blue:hover {
+	background-color: #00AEEF;
+	color: #fff;
+	cursor: pointer;
+}
+
+.button-pink-black:hover, .button-blue-black:hover, .button-blue:hover {
+	background-color: #252525;
 	color: #fff;
 	cursor: pointer;
 }
@@ -134,15 +192,15 @@ figure {
 ul.grayarrow {
 	list-style: none !important;
 	margin: 0;
-	-webkit-padding-start: 0px
+	-webkit-padding-start: 0px;
 }
 
 ul.grayarrow li {
 	padding: 0 0 15px 50px;
 	list-style: none!important;
-    	margin: 15px 0;
-    	background: url(/wp-content/themes/beingboss2018/img/Icon_Arrow_Gray.png) no-repeat;
-    	background-size: 30px;
+    margin: 15px 0;
+    background: url(/wp-content/themes/beingboss2018/img/Icon_Arrow_Gray.png) no-repeat;
+    background-size: 30px;
 }
 
 #tve_editor input {
@@ -160,6 +218,22 @@ ul.grayarrow li {
 	
 }
 
+img.imageshadow:hover {
+    box-shadow: 0 0 15px #888;
+}
+
+.spinner {
+	background: url('/wp-admin/images/wpspin_light.gif') no-repeat;
+	background-size: 16px 16px;
+	display: none;
+	float: right;
+	opacity: .7;
+	filter: alpha(opacity=70);
+	width: 16px;
+	height: 16px;
+	margin: 5px 5px 0;
+}
+
 
 
 
@@ -170,7 +244,8 @@ ul.grayarrow li {
 #full-width-page-wrapper .container-fluid, #shownote-wrapper .container-fluid, 
 #article-wrapper .container-fluid, #resource-wrapper .container-fluid, 
 #squeeze-wrapper .container-fluid, #webinar-wrapper .container-fluid, 
-#home-wrapper .container-fluid, #search-wrapper .container-fluid {
+#home-wrapper .container-fluid, #search-wrapper .container-fluid,
+#archive-wrapper .container-fluid {
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -182,9 +257,39 @@ ul.grayarrow li {
 #squeeze-wrapper .container-fluid #primary.col-md-12,
 #webinar-wrapper .container-fluid #primary.col-md-12,
 #home-wrapper .container-fluid #primary.col-md-12, 
-#search-wrapper .container-fluid #primary.col-md-12 {
+#search-wrapper .container-fluid #primary.col-md-12,
+#archive-wrapper .container-fluid #primary.col-md-12 {
 	padding: 0;
 }
+
+#main.site-main {
+	width: 100%;
+}
+
+.form-control:focus, 
+.wpcf7 .wpcf7-validation-errors:focus, 
+.wpcf7 input[type=color]:focus, 
+.wpcf7 input[type=date]:focus, 
+.wpcf7 input[type=datetime-local]:focus, 
+.wpcf7 input[type=datetime]:focus, 
+.wpcf7 input[type=email]:focus, 
+.wpcf7 input[type=file]:focus, 
+.wpcf7 input[type=month]:focus, 
+.wpcf7 input[type=number]:focus, 
+.wpcf7 input[type=range]:focus, 
+.wpcf7 input[type=search]:focus, 
+.wpcf7 input[type=submit]:focus, 
+.wpcf7 input[type=tel]:focus, 
+.wpcf7 input[type=text]:focus, 
+.wpcf7 input[type=time]:focus, 
+.wpcf7 input[type=url]:focus, 
+.wpcf7 input[type=week]:focus, 
+.wpcf7 select:focus, 
+.wpcf7 textarea:focus {
+	border-color: #00AEEF;
+}
+
+
 
 
 /*--------------------
@@ -238,27 +343,51 @@ ul.grayarrow li {
 }
 
 .margintop30 {
-	margin-top: 30px;
+	margin-top: 30px !important;
 }
 
 .margintop50 {
 	margin-top: 50px;
 }
 
+.padtop0 {
+	padding-top: 0px !important;
+}
+
 .padtop15 {
-	padding-top: 15px;
+	padding-top: 15px !important;
+}
+
+.padtop30 {
+	padding-top: 30px !important;
+}
+
+.padtop50 {
+	padding-top: 50px !important;
 }
 
 .padbot0 {
 	padding-bottom: 0px !important;
 }
 
+.padbot15 {
+	padding-bottom: 15px !important;
+}
+
 .padbot30 {
 	padding-bottom: 30px !important;
 }
 
+.padbot50 {
+	padding-bottom: 50px !important;
+}
+
 .margin30 {
 	margin: 30px auto;
+}
+
+.marginbottom0 {
+	margin-bottom: 0;
 }
 
 @media screen and (max-width: 980px) {
@@ -516,7 +645,7 @@ h5, .h5 {
 
 .giant {
 	font-size: 64px !important;
-	line-height: 1.3 !important;
+	line-height: 1.2 !important;
 }
 
 .lustbig {
@@ -573,19 +702,23 @@ h5, .h5 {
 	STRUCTURE
 *********************/
 
-#page-wrapper, #full-width-page-wrapper, #shownote-wrapper, #article-wrapper, #resource-wrapper, #squeeze-wrapper, #webinar-wrapper, #search-wrapper {
+#page-wrapper, #full-width-page-wrapper, #shownote-wrapper, #article-wrapper, #resource-wrapper, #squeeze-wrapper, #search-wrapper , #archive-wrapper{
 	margin-top: 72px;
 }
 
+#webinar-wrapper {
+	margin-top: 60px;
+}
+
 @media screen and (max-width: 550px) {
-	#page-wrapper, #full-width-page-wrapper, #shownote-wrapper, #article-wrapper, #resource-wrapper, #squeeze-wrapper, #webinar-wrapper, #search-wrapper {
+	#page-wrapper, #full-width-page-wrapper, #shownote-wrapper, #article-wrapper, #resource-wrapper, #squeeze-wrapper, #webinar-wrapper, #search-wrapper, #archive-wrapper {
 		margin-top: 80px;
 	}
 }
 
 
 @media screen and (min-width: 551px) and (max-width: 845px) {
-	#page-wrapper, #full-width-page-wrapper, #shownote-wrapper, #article-wrapper, #resource-wrapper, #squeeze-wrapper, #webinar-wrapper, #search-wrapper {
+	#page-wrapper, #full-width-page-wrapper, #shownote-wrapper, #article-wrapper, #resource-wrapper, #squeeze-wrapper, #webinar-wrapper, #search-wrapper, #archive-wrapper {
 		margin-top: 62px;
 	}
 }
@@ -716,6 +849,11 @@ h5, .h5 {
 	height: 100%;
 }
 
+.vertcenter, .vertalign {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 
 .emilyandkathleendesktop {display: block;}
 
@@ -786,10 +924,6 @@ button.tve-froala {
 	MENUS
 *********************/
 
-.menuright {
-	width: 700px;
-}
-
 #wrapper-navbar {
 	max-height: 80px;
 }
@@ -799,14 +933,14 @@ button.tve-froala {
 	border-bottom: 1px solid #eaeaea;
 }
 
-body.home #wrapper-navbar .bg-light {
+body.home-page #wrapper-navbar .bg-light {
 	background-color: transparent !important;
 	border-bottom: 1px solid #eaeaea;
 	transition:top 0.5s ease;
   	transition: background-color 0.5s ease;
 }
 
-body.home #wrapper-navbar .bg-light.scrolled {
+body.home-page #wrapper-navbar .bg-light.scrolled {
   	background-color: #fff !important;
 }
 	
@@ -832,31 +966,31 @@ body.home #wrapper-navbar .bg-light.scrolled {
 	background-size: 100% 100%;
 }
 
-body.home #wrapper-navbar .navbar-brand img {
+body.home-page #wrapper-navbar .navbar-brand img {
 	visibility: hidden;
 }
 
-body.home #wrapper-navbar .navbar-brand {
+body.home-page #wrapper-navbar .navbar-brand {
 	background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_White.svg');
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
-body.home #wrapper-navbar .navbar-brand.blacklogo img {
+body.home-page #wrapper-navbar .navbar-brand.blacklogo img {
 	visibility: visible;
 }
 
-body.home #wrapper-navbar .navbar-brand.blacklogo:hover img {
+body.home-page #wrapper-navbar .navbar-brand.blacklogo:hover img {
 	visibility: hidden;
 }
 
-body.home #wrapper-navbar .navbar-brand:hover {
-	background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_Pink.svg');
+body.home-page #wrapper-navbar .navbar-brand:hover {
+	background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_yellow.svg');
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
-body.home #wrapper-navbar .navbar-brand.blacklogo:hover {
+body.home-page #wrapper-navbar .navbar-brand.blacklogo:hover {
 	background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_blue.svg');
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -864,23 +998,23 @@ body.home #wrapper-navbar .navbar-brand.blacklogo:hover {
 
 
 @media screen and (max-width: 1000px) {
-	body.home #wrapper-navbar .bg-light {
+	body.home-page #wrapper-navbar .bg-light {
 		background-color: #fff !important;
 	}
 
-	body.home #wrapper-navbar .navbar-brand img {
+	body.home-page #wrapper-navbar .navbar-brand img {
 		visibility: visible;
 	}
 
-	body.home #wrapper-navbar .navbar-brand {
+	body.home-page #wrapper-navbar .navbar-brand {
 		background-image: none;
 	}
 
-	body.home #wrapper-navbar .navbar-brand:hover img {
+	body.home-page #wrapper-navbar .navbar-brand:hover img {
 		visibility: hidden;
 	}
 
-	body.home #wrapper-navbar .navbar-brand:hover {
+	body.home-page #wrapper-navbar .navbar-brand:hover {
 		background-image: url('/wp-content/themes/beingboss2018/img/Head_Logo_blue.svg');
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -928,19 +1062,19 @@ body.home #wrapper-navbar .navbar-brand.blacklogo:hover {
 	color: #252525;
 }
 
-body.home .navbar-light .navbar-nav .nav-link {
+body.home-page .navbar-light .navbar-nav .nav-link {
 	color: #fff;
 }
 
-body.home .navbar-light .navbar-nav .nav-link:hover {
+body.home-page .navbar-light .navbar-nav .nav-link:hover {
 	color: #252525;
 }
 
-body.home .navbar-light.scrolled .navbar-nav .nav-link {
+body.home-page .navbar-light.scrolled .navbar-nav .nav-link {
 	color: #252525;
 }
 
-body.home .navbar-light.scrolled .navbar-nav .nav-link:hover {
+body.home-page .navbar-light.scrolled .navbar-nav .nav-link:hover {
 	color: #252525;
 }
 
@@ -950,7 +1084,7 @@ body.home .navbar-light.scrolled .navbar-nav .nav-link:hover {
 
 .drawer-nav ul {
 	list-style-type: none;
-	-webkit-padding-start: 0px;
+	-webkit-padding-start: 15px;
 }
 
 .drawer-nav ul li {
@@ -965,6 +1099,14 @@ body.home .navbar-light.scrolled .navbar-nav .nav-link:hover {
 
 .drawer-nav ul li a:hover {
 	color: #EC008C;
+}
+
+.drawer-nav ul li ul {
+	padding-left: 25px;
+}
+
+.drawer-nav ul li ul li {
+	font-size: 14px;
 }
 
 .drawer-nav .dropdown-menu.show {
@@ -993,19 +1135,19 @@ body.home .navbar-light.scrolled .navbar-nav .nav-link:hover {
 	color: #00AEEF;
 }
 
-body.home .navbar-light .topmenu a {
+body.home-page .navbar-light .topmenu a {
 	color: #fff;
 }
 
-body.home .navbar-light .topmenu a:hover {
+body.home-page .navbar-light .topmenu a:hover {
 	color: #00AEEF;
 }
 
-body.home .navbar-light.scrolled .topmenu a {
+body.home-page .navbar-light.scrolled .topmenu a {
 	color: #252525;
 }
 
-body.home .navbar-light.scrolled .topmenu a:hover {
+body.home-page .navbar-light.scrolled .topmenu a:hover {
 	color: #00AEEF;
 }
 	
@@ -1064,11 +1206,11 @@ body.home .navbar-light.scrolled .topmenu a:hover {
 		margin: 0 auto 7px;
 }
 
-body.home .navbar-light .navbar-nav .dropdown-menu .nav-link {
+body.home-page .navbar-light .navbar-nav .dropdown-menu .nav-link {
 	color: #252525;
 }
 
-body.home .navbar-light .navbar-nav .bb-special-dropdown .dropdown-menu .nav-link:hover {
+body.home-page .navbar-light .navbar-nav .bb-special-dropdown .dropdown-menu .nav-link:hover {
 	color: #00AEEF;
 }
 
@@ -1173,8 +1315,31 @@ body.home .navbar.scrolled #top-search input[type=search] {
 	color: transparent;
 }
 
+#mobile-search {
+	margin: 0 auto 0 15px;
+    display: table;
+    width: 75%;
+}
 
-
+#mobile-search input {
+	outline: none;
+}
+#mobile-search input::-webkit-search-decoration,
+#mobile-search input::-webkit-search-cancel-button {
+	display: none; 
+}
+#mobile-search input[type=search] {
+	padding: 10px 5px;
+	border: none;
+	border-radius: 0px;
+	width: 100%
+	color: #252525;
+	cursor: pointer;
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
 
 
 
@@ -1227,13 +1392,14 @@ ul#menu-footer-info, ul#menu-footer-content, ul#menu-footer-join-us {
 }
 
 #footer-subscribe button {
-
 	font-family: brandon-grotesque, sans-serif !important; 
 	font-weight: 900 !important;
-
 	max-width: 250px;
-    	display: block;
-    	margin: 3px auto;
+    display: block;
+    margin: 3px auto;
+    -webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
 #wrapper-footer {
@@ -1348,14 +1514,18 @@ ul#menu-footer-info, ul#menu-footer-content, ul#menu-footer-join-us {
 }
 
 #home-wrapper .headersection {
-	background: url(/wp-content/themes/beingboss2018/img/Header_CEOFaces_3.jpg);
-    	background-size: cover;
-    	background-position: 0px 0px;
+	background: url(/wp-content/uploads/2018/08/Back_Smoke_3.jpg);
+    background-size: cover;
+    background-position: 0px 0px;
 	background-attachment: fixed;
-    	width: 100%;
-    	height: 725px;
-    	display: table;
-    	position: relative;
+    width: 100%;
+    height: 775px;
+    display: table;
+    position: relative;
+}
+
+#home-wrapper .headersection img {
+	padding: 50px 0;
 }
 
 #home-wrapper .headersection a.home-header-link {
@@ -1379,8 +1549,9 @@ ul#menu-footer-info, ul#menu-footer-content, ul#menu-footer-join-us {
 }
 
 #home-wrapper .headersection .headertext p.serif {
-	line-height: 1.5 !important;
+	line-height: 1.7 !important;
 	padding: 25px 0 50px;
+	letter-spacing: 1px;
 }
 
 #home-wrapper .headersection .headertext .button-yellow {
@@ -1479,7 +1650,11 @@ a.carousel_link:hover {
 	#home-wrapper .headersection {
 		background-position: -100px 0px;
 		background-attachment: unset;
-		height: 550px;
+		height: 650px;
+	}
+
+	#home-wrapper .headersection img {
+		max-width: 60%;
 	}
 
 	#home-wrapper .headersection .headertext {
@@ -1547,7 +1722,7 @@ a.carousel_link:hover {
 	#home-wrapper .headersection {
 		background-position: -100px 0px;
 		background-attachment: unset;
-		height: 600px;
+		height: 625px;
 	}
 }
 
@@ -1566,7 +1741,11 @@ a.carousel_link:hover {
 	#home-wrapper .headersection {
 		background-position: top left;
 		    background-attachment: unset;
-		    height: 600px;
+		height: 675px;
+	}
+
+	#home-wrapper .headersection img {
+		max-width: 60%;
 	}
 
 	#home-wrapper .headersection .headertext {
@@ -1614,9 +1793,9 @@ a.carousel_link:hover {
 
 @media screen and (min-width: 768px) and (max-width: 849px) {
 	#home-wrapper .headersection {
-		height: 650px;
+		height: 750px;
 		background-position: top center;
-		    background-attachment: unset;
+		background-attachment: unset;
 	}
 
 	#home-wrapper .headersection .headertext {
@@ -1675,7 +1854,6 @@ a.carousel_link:hover {
 
 @media screen and (min-width: 850px) and (max-width: 994px) {
 	#home-wrapper .headersection {
-		height: 500px;
 		    background-attachment: unset;
 	}
 
@@ -1730,8 +1908,7 @@ a.carousel_link:hover {
 
 @media screen and (min-width: 995px) and (max-width: 1200px) {
 	#home-wrapper .headersection {
-		height: 600px;
-		    background-attachment: unset;
+		background-attachment: unset;
 	}
 
 	#home-wrapper .relatedpostbox {
@@ -1808,19 +1985,32 @@ a.carousel_link:hover {
 }
 
 .bbpage-header .container {
-    	height: 100%;
+    height: 100%;
 	position: relative;
 }
 
 .bbpage-header .headertext {
 	width: 90%;
-    	left: 0;
-    	margin: auto;
-    	top: 0;
-    	bottom: 0;
+    left: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
    	display: table;
-    	right: 0;
+    right: 0;
 	position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+	.dashboard .bbpage-header, .course-archive .bbpage-header,
+	.forum-wrapper .bbpage-header, .product-archive .bbpage-header {
+		height: 250px;
+	}
+
+	.forum-wrapper .bbpage-header h1.huge {
+		font-size: 36px !important;
+		line-height: 40px !important;
+	}
+
 }
 
 
@@ -2263,6 +2453,10 @@ h1.shownote-title {
 	margin-top: 50px;
 }
 
+#shownote-wrapper .entry-content .comments-area h3 {
+	margin-top: 0;
+}
+
 #shownote-wrapper .entry-content ul {
 	padding: 0 0 0 20px;
 }
@@ -2297,6 +2491,9 @@ h1.shownote-title {
 .shownote_subscribe button {
 	font-family: brandon-grotesque, sans-serif;
 	font-weight: 900;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
 .shownote_subscribe button:hover {
@@ -2344,6 +2541,22 @@ h1.shownote-title {
 .shownote_nav a:hover {
 	color: #00AEEF;
 }
+
+p.comment-prompt { 
+	color: #EC008C;
+    background: linear-gradient(to bottom right, #EC008C, #00AEEF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 38px !important;
+    line-height: 1.5 !important;
+    text-transform: uppercase;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 900;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 15px 0 50px !important;
+ }
 
 .relatedpostsection {
     	display: -webkit-flex;
@@ -2974,6 +3187,9 @@ h2.eventitemtitle a:hover {
 #vacation-subscribe button {
     font-family: brandon-grotesque, sans-serif !important;
     font-weight: 900 !important;
+    -webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
 .vacationcontainer {
@@ -3473,6 +3689,9 @@ a.vacationitemreadmore:hover {
 .discoversubscribe button {
 	font-family: brandon-grotesque, sans-serif;
     	font-weight: 900;
+    	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
 
@@ -3540,6 +3759,9 @@ a.vacationitemreadmore:hover {
 .squeeze_subscribe button {
 	font-family: brandon-grotesque, sans-serif;
 	font-weight: 900;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
 .squeeze_subscribe button:hover {
@@ -3694,6 +3916,9 @@ a.vacationitemreadmore:hover {
 	margin: 30px auto 0;
 	background: #FFF200;
 	color: #252525;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
 .top-subscribe button.webinar-button:hover {
@@ -3814,6 +4039,9 @@ article.webinar .entry-footer button.webinar-button {
 	background-color: #ffdd00;
 	color: #252525;
 	-webkit-box-shadow: none;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
 .woocommerce input[type="submit"] {
@@ -3876,6 +4104,9 @@ a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
 	font-style: italic;
 	    line-height: 24px;
     display: table;
+    -webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
 }
 
 .product .woocommerce .add_to_cart_inline  {
@@ -3883,7 +4114,7 @@ a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
 	padding: 0px;
 }
 
-input#inscription_checkbox.input-checkbox {
+input#inscription_checkbox.input-checkbox, input#vacation_terms.input-checkbox {
     display: inline-block;
     margin: 6px 4px 0 0;
     text-align: center;
@@ -3929,6 +4160,124 @@ input#inscription_checkbox.input-checkbox {
 
 .stripe-card-group, #stripe-card-element, .StripeElement, #stripe-exp-element, #stripe-cvc-element {
 		width: 100% !important;
+}
+
+#add_payment_method table.cart td.actions .coupon .input-text, 
+.woocommerce-cart table.cart td.actions .coupon .input-text, 
+.woocommerce-checkout table.cart td.actions .coupon .input-text,
+.woocommerce #content table.cart td.actions .input-text, 
+.woocommerce table.cart td.actions .input-text, 
+.woocommerce-page #content table.cart td.actions .input-text, 
+.woocommerce-page table.cart td.actions .input-text {
+	width: 200px;
+}
+
+.buddypress .buddypress-wrap .actions button,
+.buddypress .buddypress-wrap .checkout_coupon.woocommerce-form-coupon button,
+.woocommerce .woocommerce-cart-form button.btn.btn-outline-primary {
+	max-width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    color: #252525;
+    background-color: #FFF200;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 9px 30px;
+    display: table;
+    border: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.buddypress .buddypress-wrap .checkout_coupon.woocommerce-form-coupon button {
+	margin: 0 auto 0 0;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.buddypress .buddypress-wrap .actions button[name=update_cart],
+.woocommerce .woocommerce-cart-form .actions button[name=update_cart] {
+	margin: 0 0 0 auto;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.buddypress .buddypress-wrap .actions button:hover,
+.buddypress .buddypress-wrap .checkout_coupon.woocommerce-form-coupon button:hover,
+.woocommerce .woocommerce-cart-form button.btn.btn-outline-primary:hover {
+	color: #fff;
+    background-color: #EC008C;
+}
+
+.wc-proceed-to-checkout a.btn-primary {
+	background-color: #EC008C;
+	color: #fff;
+	padding: 15px 50px;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.wc-proceed-to-checkout a.btn-primary:hover {
+	background-color: #FFF200;
+	color: #252525;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, 
+.btn-outline-primary:not(:disabled):not(.disabled):active, 
+.show>.btn-outline-primary.dropdown-toggle, 
+.wpcf7 .show>input.dropdown-toggle[type=submit], 
+.wpcf7 input[type=submit]:not(:disabled):not(.disabled).active, 
+.wpcf7 input[type=submit]:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active, 
+.btn-primary:not(:disabled):not(.disabled):active, 
+.show>.btn-primary.dropdown-toggle {
+	color: #fff;
+    background-color: #00AEEF;
+    border-color: #00AEEF;
+}
+
+.btn-outline-primary.focus, .btn-outline-primary:focus, 
+.wpcf7 input.focus[type=submit], 
+.wpcf7 input[type=submit]:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus, 
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-outline-primary.dropdown-toggle:focus, 
+.wpcf7 .show>input.dropdown-toggle[type=submit]:focus, 
+.wpcf7 input[type=submit]:not(:disabled):not(.disabled).active:focus, 
+.wpcf7 input[type=submit]:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+}
+
+.woocommerce .checkout.woocommerce-checkout .address-field span.woocommerce-input-wrapper {
+	width: 250px;
+}
+
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+	max-width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    color: #252525;
+    background-color: #FFF200;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 10px 50px;
+    display: table;
+    border: 0;
+    text-transform: uppercase;
+}
+
+.woocommerce #payment #place_order:hover, .woocommerce-page #payment #place_order:hover {
+	background: #EC008C;
+	color: #fff;
 }
 
 
@@ -4601,4 +4950,1831 @@ NEW ORLEANS
 	.nolapaymentsection .paymentboxes {
 		width: 100%;
 	}
+}
+
+
+
+
+
+
+
+
+/**********************
+	LOGIN PAGE
+**********************/
+
+.uo_loginForm h2 {
+	text-align: center;
+}
+
+.uo_loginForm #loginform label[for="user_login"], .uo_loginForm #loginform label[for="user_pass"] {
+	font-family: brandon-grotesque, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.uo_loginForm input#user_login,
+.uo_loginForm input#user_pass {
+	width: 100%;
+	height: 45px;
+    border: 1px solid #eaeaea;
+    font-style: italic;
+    padding: 0 10px;
+}
+
+.uo_loginForm input[type=submit] {
+	border-radius: 10px;
+	text-transform: uppercase;
+	background-color: #FFF200;
+	color: #252525;
+}
+
+.uo_loginForm input[type=submit]:hover {
+	background-color: #EC008C;
+	color: #fff;
+}
+
+.uo_loginForm form#loginform {
+	margin: 0 auto;
+    width: 75%;
+    text-align: left;
+}
+
+.uo_loginForm form#loginForm input {
+	margin: 0 auto;
+	display: table;
+	width: 100%;
+}
+
+.uo_loginForm a.forgot-link {
+	color: #252525;
+	text-transform: lowercase;
+    font-style: italic;
+}
+
+.uo_loginForm a.forgot-link:hover {
+	color: #00AEEF;
+}
+
+.uo_loginForm .login-msg {
+	width: 90%;
+	margin: 0 auto 15px;
+	display: table;
+	text-align: center;
+}
+
+.uo_loginForm p.login-msg {
+	color: #EC008C;
+}
+
+.uo_loginForm p.submit input#wp-submit {
+	border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.uo_loginForm form#lostpasswordform, .uo_loginForm form#resetpassform {
+	width: 75%;
+    margin: 0 auto;
+    display: table;
+}
+
+.uo_loginForm p.submit input#wp-submit:hover {
+	cursor: pointer;
+}
+
+
+
+/**********************
+	DASHBOARD
+**********************/
+
+
+.user-menu-bar, .course-menu-bar {
+	display: table; 
+	width: 100%; 
+	height: auto; 
+	background-color: #eaeaea;
+}
+
+@media screen and (max-width: 768px) {
+	.user-menu-bar {
+		padding: 10px 0 15px;
+	}
+
+	.course-menu-bar {
+		padding: 10px 0 15px;
+	}
+}
+
+.user-menu-bar .bp-navs,
+.user-menu-bar .course-menu-container,
+.user-menu-bar .menu-dashboard-menu-container {
+	margin-top: auto;
+    margin-bottom: auto;
+    padding: 18px 0;
+}
+
+.user-menu-bar .menu-user-menu-container {
+	margin-top: auto;
+    margin-bottom: auto;
+    padding: 18px 0;
+    width: 85%;
+    display: inline-block;
+    text-align: right;
+}
+
+.course-menu-bar {
+	display: table; 
+	width: 100%; 
+	height: auto; 
+	background-color: #f7f7f7;
+}
+
+.course-menu-bar .course-menu-container {
+	margin-top: auto;
+    margin-bottom: auto;
+    padding: 18px 0;
+}
+
+img.dash-user-avatar {
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0 0 auto 3%;
+	padding: 0;
+	width: 10%;
+}
+
+.buddypress-wrap.bp-dir-hori-nav:not(.bp-vertical-navs) nav:not(.tabbed-links) {
+	border: none !important;
+	box-shadow: none !important;
+}
+
+ul.course-menu, ul.user-menu, ul.dashboard-menu {
+	list-style-type: none;
+	-webkit-padding-start: 5px;
+	margin-bottom: 0;
+}
+
+ul.course-menu li, ul.user-menu li, ul.dashboard-menu li {
+	display: inline-block;
+	padding-right: 15px;
+}
+
+ul.course-menu li a, ul.dashboard-menu li a, .bp-navs ul li a {
+	text-transform: uppercase;
+	color: #252525;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-size: 14px;
+	font-weight: 900;
+}
+
+ul.course-menu li a {
+	font-weight: 600;
+}
+
+ul.user-menu li a {
+	font-family: 'PT Serif', serif;
+	font-style: italic;
+	color: #252525;
+}
+
+ul.course-menu li a:hover, ul.user-menu li a:hover, .bp-navs ul li:hover a, ul.dashboard-menu li a:hover {
+	color: #00AEEF;
+}
+
+
+
+
+.buddypress-wrap .bp-navs li:not(.current) a:focus, 
+.buddypress-wrap .bp-navs li:not(.current) a:hover, 
+.buddypress-wrap .bp-navs li:not(.selected) a:focus, 
+.buddypress-wrap .bp-navs li:not(.selected) a:hover {
+	color: #00AEEF;
+}
+
+.breadcrumbs-menu {
+	text-align: right;
+}
+
+.breadcrumbs-menu a {
+	font-family: 'PT Serif', serif;
+    font-style: italic;
+    color: #252525;
+}
+
+.breadcrumbs-menu a:hover {
+	color: #00AEEF;
+}
+
+.breadcrumbs-menu div.bbp-breadcrumb {
+	float: right;
+}
+
+.breadcrumbs-menu .sfwd-breadcrumbs {
+	display: inline-block;
+}
+
+.breadcrumbs-menu .sfwd-breadcrumbs span:first-of-type a.trail-begin,
+.breadcrumbs-menu .sfwd-breadcrumbs span:nth-of-type(2), 
+.breadcrumbs-menu .sfwd-breadcrumbs span:nth-of-type(3) a.trail-begin {
+	display: none;
+}
+
+.breadcrumbs-menu .breadcrumb-leads {
+	display: inline-block;
+}
+
+.dashboard-content .dashboard-widget {
+	margin: 0 auto 25px;
+}
+
+.dashboard-content .dashboard-widget .widget-wrapper {
+	border: 1px solid #eaeaea;
+    width: 100%;
+    display: table;
+    padding: 25px;
+    margin: -5px auto 25px;
+}
+
+.dashboard-content h3 {
+	color: #e9e9e9;
+    margin-bottom: -4px;
+    line-height: 1;
+    font-size: 28px;
+}
+
+.dashboard .avatar-block {
+	border: 1px solid #eaeaea;
+    width: 100%;
+    display: table;
+    padding: 25px;
+    margin: -5px auto 25px;
+}
+
+.dashboard .avatar-block .item-avatar {
+	display: inline-block;
+	width: 23%;
+	margin: 0 1% 15px;
+}
+
+.dashboard .dashboard-widget .archivecontainer {
+	width: 90%;
+	margin: 15px auto 0;
+	-webkit-justify-content: center;
+    justify-content: center;
+}
+
+.dashboard .dashboard-widget .archiveitem {
+	width: 300px;
+}
+.dashboard .dashboard-widget .archiveitem .archiveitemcontent {
+	padding: 30px 35px;
+}
+
+.dashboard .dashboard-widget .archiveitem h5 {
+	margin-bottom: 0;
+}
+
+.dashboard .dashboard-widget .archiveitem h5 .archiveitemtitle {
+	font-size: 22px;
+}
+
+.dashboard .dashboard-widget .archiveitem p.archiveitemauthor {
+	text-transform: initial;
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    padding: 0 0 5px !important;
+    margin-bottom: 15px;
+}
+
+.dashboard .dashboard-widget .archiveitem dd.course_progress {
+	height: 30px;
+	width: 100%;
+}
+
+.dashboard .dashboard-widget a.carousel_link {
+	float: none;
+    text-align: right;
+    margin: 0 0 0 auto;
+}
+
+
+@media screen and (max-width: 768px) {
+	.dashboard .dashboard-widget .archiveitem {
+		width: 100%;
+	}
+}
+
+.dashboard .dashboard-widget .archiveitemimage {
+    min-height: 108px;
+    background: linear-gradient(to right, #00AEEF, #FFF200);
+    position: relative;
+}
+
+.dashboard .dashboard-widget.recent-topics ul {
+    border: 1px solid #eaeaea;
+    width: 100%;
+    display: table;
+    padding: 25px;
+    margin: -5px auto 25px;
+    list-style-type: none;
+}
+
+.dashboard .dashboard-widget.recent-topics ul li {
+	font-style: italic;
+}
+
+.dashboard .dashboard-widget.recent-topics ul li a.bbp-forum-title {
+	font-size: 14px;
+}
+
+.dashboard .dashboard-widget.recent-topics ul li a.bbp-forum-title:hover {
+	color: #00AEEF;
+}
+
+.dashboard .dashboard-widget.recent-topics ul li:before {
+	content: '>>';
+}
+
+.dashboard .dashboard-widget .course-status {
+    display: table;
+    min-width: 100px;
+    width: auto;
+    max-width: 70%;
+    height: 50px;
+    margin: 0 auto auto 0;
+    position: absolute;
+    background: #252525;
+    top: 0;
+    z-index: 5;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 600;
+}
+
+.dashboard .widget_shopping_cart_content {
+	padding: 25px;
+}
+
+.dashboard .widget_shopping_cart_content ul {
+	list-style-type: none;
+	-webkit-padding-start: 0;
+	display: table;
+}
+
+.dashboard .widget_shopping_cart_content ul li {
+	width: 100%;
+    display: inline-block;
+    float: left;
+    margin: 0 2% 25px;
+}
+
+.dashboard .widget_shopping_cart_content ul li img {
+	float: left;
+	width: 30%;
+    margin-right: 5%;
+}
+
+.dashboard .widget_shopping_cart_content ul li a.remove.remove_from_cart_button {
+	display: none;
+}
+
+.dashboard .widget_shopping_cart_content .button {
+	text-transform: uppercase;
+	display: table;
+    width: 100%;
+    margin: 0 auto 10px;
+    -webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.dashboard .widget_shopping_cart_content p.woocommerce-mini-cart__total.total {
+	text-align: center;
+}
+
+
+
+
+
+/**********************
+	COURSE STYLES
+**********************/
+
+#full-width-page-wrapper.single-course .bbpage-header .headertext img,
+#full-width-page-wrapper.single-lesson .bbpage-header .headertext img {
+	display: inline-block;
+ 	width: 30%;
+	padding-right: 50px;
+}
+	
+#full-width-page-wrapper.single-course .bbpage-header .headertext .headerright,
+#full-width-page-wrapper.single-lesson .bbpage-header .headertext .headerright {
+	width: 65%;
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+}
+
+#full-width-page-wrapper.single-course .bbpage-header .headertext hr,
+#full-width-page-wrapper.single-lesson .bbpage-header .headertext hr {
+	width: 140px;
+	height: 0px;
+	margin: 0 auto 15px 0;
+	background: #fff;
+}
+
+#full-width-page-wrapper.single-course #learndash_course_status,
+#full-width-page-wrapper.single-lesson #learndash_course_status {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	#full-width-page-wrapper.single-course .bbpage-header .headertext img,
+	#full-width-page-wrapper.single-lesson .bbpage-header .headertext img {
+		display: table;
+	    width: 75%;
+	    padding-right: 0;
+	    margin: 0 auto;
+	}
+		
+	#full-width-page-wrapper.single-course .bbpage-header .headertext .headerright,
+	#full-width-page-wrapper.single-lesson .bbpage-header .headertext .headerright {
+		width: 90%;
+	    display: table;
+	    margin: 0 auto;
+	}
+
+	#full-width-page-wrapper.single-course .bbpage-header .headertext .headerright p,
+	#full-width-page-wrapper.single-lesson .bbpage-header .headertext .headerright p {
+		font-size: 14px !important;
+		line-height: 16px !important;
+		padding-bottom: 10px;
+		font-weight: 600 !important;
+	}
+
+	#full-width-page-wrapper.single-course .bbpage-header .headertext hr,
+	#full-width-page-wrapper.single-lesson .bbpage-header .headertext hr {
+		width: 140px;
+		height: 0px;
+		margin: 0 auto 10px;
+		background: #fff;
+	}
+
+	#full-width-page-wrapper.single-course #learndash_course_status,
+	#full-width-page-wrapper.single-lesson #learndash_course_status {
+		display: none;
+	}
+}
+
+h4#learndash_course_content_title {
+	font-family: brandon-grotesque, sans-serif;
+    font-style: normal;
+    font-size: 21px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    color: #252525;
+}
+
+#learndash_course_content {
+	margin-top: -25px;
+}
+
+#learndash_lessons #lesson_heading {
+	display: none;
+}
+
+#learndash_lessons {
+	border: none;
+	box-shadow: none;
+}
+
+#lessons_list div.is_not_sample {
+	margin-bottom: 15px;
+    display: table;
+    width: 100%;
+}
+
+#lessons_list > div h4 {
+	border-top: 0px;
+}
+
+#lessons_list .list-count {
+	border-right: 0px;
+	font-family: brandon-grotesque, sans-serif;
+    font-style: normal;
+    font-size: 21px;
+    font-weight: 900;
+    border-top: 0px;
+}
+
+#learndash_lessons a {
+	font-family: 'PT Serif', serif;
+	color: #252525;
+	font-style: italic;
+	font-size: 16px;
+}
+
+.course-sidebar h2 {
+	color: #e9e9e9;
+	margin-bottom: -5px;
+    line-height: 1;
+}
+
+.course-sidebar .widget_ldcourseprogress, .course-sidebar .lesson-course-progress {
+	padding: 15px;
+    border: 1px solid #eaeaea;
+    margin-bottom: 25px;
+}
+
+.coursebonuses {
+	border: 1px solid #eaeaea;
+	width: 100%; 
+	display: table; 
+	padding: 25px;
+	margin: -5px auto 25px;
+}
+
+.coursebonuses .bonus-list h2 {
+
+}
+
+.coursebonuses .bonus-list h2 a {
+	color: #fff;
+	font-size: 16px;
+    line-height: 1.3;
+    display: list-item;
+    list-style-type: none;
+    list-style-position: inside;
+    background: linear-gradient(to right, #00AEEF, #FFF200);
+    padding: 25px;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.coursebonuses .bonus-list h2 a:hover {
+	background: linear-gradient(to right, #00AEEF, #EC008C);
+}
+
+#shownote-wrapper .coursebonuses .bonus-list .ld-entry-content.entry-content {
+	margin: 0;
+}
+
+.coursebonuses .bonus-list .ld-course-list-items.row {
+	margin-left: 0;
+    margin-right: 0;
+}
+
+.course-materials {
+	border: 1px solid #eaeaea;
+	width: 100%; 
+	display: table; 
+	padding: 25px;
+	margin: -5px auto 25px;
+}
+
+.course-materials ul {
+	list-style-type: none;
+	margin-bottom: 0;
+	-webkit-padding-start: 0px;
+}
+
+.course-materials ul li a {
+	color: #252525;
+	font-style: italic;
+}
+
+.course-materials ul li a:hover {
+	color: #00AEEF;
+}
+
+.lesson-content #sfwd-mark-complete {
+	display: none;
+}
+
+.course-sidebar #sfwd-mark-complete input[type=submit] {
+	max-width: 85%;
+    margin: 25px auto 15px;
+    text-align: center;
+    color: #fff;
+    background-color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 50px;
+    display: table;
+    border: 0;
+    text-transform: uppercase;
+}
+
+.course-sidebar #sfwd-mark-complete input[type=submit]:hover {
+	cursor: pointer;
+	background-color: #EC008C;
+}
+
+#learndash_next_prev_link a.prev-link, #learndash_next_prev_link a.next-link {
+	background-image: url(/wp-content/themes/beingboss2018/img/Scribble.png) !important;
+    background-size: 118px 39px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    color: #252525;
+    text-transform: uppercase;
+        padding: 15px 0;
+}
+
+#learndash_next_prev_link a.prev-link:hover, #learndash_next_prev_link a.next-link:hover {
+	color: #00AEEF;
+}
+
+dd.course_progress {
+	height: 35px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 25px;
+}
+
+dd.course_progress div.course_progress_blue {
+	background-color: #00AEEF;
+}
+
+.single-lesson .bp-group-discussion, .single-course .bp-group-discussion {
+	display: none;
+}
+
+.course-lesson-navigation {
+	border: 1px solid #eaeaea;
+	width: 100%; 
+	display: table; 
+	padding: 25px;
+	margin: -5px auto 25px;
+	line-height: 1;
+}
+
+.course-lesson-navigation #course_navigation .learndash_navigation_lesson_topics_list a {
+	color: #252525;
+	font-style: italic;
+}
+
+.course-lesson-navigation #course_navigation .learndash_navigation_lesson_topics_list a:hover {
+	color: #00AEEF;
+}
+
+.course-lesson-navigation #course_navigation .learndash_navigation_lesson_topics_list .inactive,
+.course-lesson-navigation #course_navigation .learndash_navigation_lesson_topics_list .active {
+	padding-bottom: 5px;
+    display: table;
+}
+
+
+@media screen and (max-width: 768px) {
+	.course-sidebar {
+		margin-top: 50px;
+	}
+
+	#lessons_list .list-count {
+		width: 10%;
+	}
+
+	#lessons_list > div h4 {
+	    width: 88%;
+	}
+
+	.learndash .notcompleted, #learndash_profile .notcompleted {
+		line-height: 1.3;
+		padding: 25px 75px 25px 15px !important;
+	}
+
+	.bp-group-discussion .button {
+		clear: both;
+	}
+}
+
+
+
+/******* COURSE ARCHIVE ******/
+
+.course-archive .archivecontainer {
+	-webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+
+.course-archive .archiveitemimage {
+	min-height: 125px;
+	background: linear-gradient(to right, #00AEEF, #FFF200);
+	position: relative;
+}
+
+.course-archive .archiveitemcontent {
+	padding: 30px 35px;
+}
+
+.course-archive .course-status {
+	display: table;
+    min-width: 100px;
+    width: auto;
+    max-width: 70%;
+    height: 50px;
+    margin: 0 auto auto 0;
+    position: absolute;
+    background: #252525;
+    top: 0;
+    z-index: 5;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 600;
+}
+
+.course-archive h5 {
+	margin-bottom: 0;
+}
+
+.course-archive p.archiveitemauthor {
+	text-transform: initial;
+	font-family: 'PT Serif', serif;
+	font-style: italic;
+	font-size: 14px !important;
+    line-height: 1.3 !important;
+    padding: 0 0 25px !important;
+}
+
+.course-archive a.archiveitemreadmore {
+	display: table;
+	margin: 0 auto;
+}
+
+.course-archive dd.course_progress {
+	height: 25px;
+	width: 100%;
+}
+
+
+
+
+/**********************
+	BUDDYPRESS
+**********************/
+
+body.bp-user .bp-wrap .item-body {
+	margin: 20px 0 75px;
+}
+
+#buddypress .groups-header #header-cover-image {
+	height: 350px !important;
+}
+
+#buddypress .groups-header #item-header-cover-image {
+	margin-bottom: 0;
+	height: 350px;
+}
+
+@media screen and (max-width: 768px) {
+	#buddypress .groups-header #header-cover-image {
+		height: 250px !important;
+	}
+
+	#buddypress .groups-header #item-header-cover-image {
+		height: 250px;
+	}
+}
+
+.groups-header .desc-wrap {
+	display: none;
+}
+
+.groups-header.single-headers {
+    margin-bottom: 0px;
+}
+
+.bp-group-discussion .button {
+	background-color: #FFF200;
+	color: #252525;
+	text-transform: uppercase;
+	-webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.bp-group-discussion .button:hover {
+	background-color: #EC008C;
+	color: #fff;
+}
+
+.member-front-page {
+	padding: 75px 0;
+}
+
+body.buddypress .buddypress-wrap .member-description h2 {
+	color: #eaeaea;
+	font-size: 32px;
+	margin: 0;
+	line-height: 1;
+}
+
+.profile-bio, .profile-user {
+	border: 1px solid #eaeaea;
+    width: 100%;
+    display: table;
+    padding: 25px;
+    margin: -5px auto 25px;
+}
+
+.profile-user img {
+	border-radius: 50%;
+	margin: -75px auto 15px;
+	display: table;
+}
+
+body.buddypress .buddypress-wrap .member-description .profile-user h2 {
+	color: #252525;
+	font-size: 24px;
+}
+
+.profile-user a.button-yellow {
+	text-transform: uppercase;
+}
+
+#members-group-list .list-wrap .item, #members-dir-list .list-wrap .item {
+	height: auto;
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+@media screen and (min-width: 24em) {
+	#members-group-list .grid.groups-list .list-wrap,
+	#members-dir-list .grid.groups-list .list-wrap {
+	    min-height: 300px;
+	}
+}
+
+#members-dir-list .grid>li {
+	padding-bottom: 25px;
+}
+
+#members-dir-list .list-title.member-name a {
+	color: #252525;
+	font-weight: 600;
+}
+
+#members-dir-list .list-title.member-name a:hover {
+	color: #00AEEF;
+}
+
+.buddypress-wrap .grid.bp-list>li .action .generic-button button {
+	max-width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFF200;
+    color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 50px;
+    display: table;
+    border: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.buddypress-wrap .grid.bp-list>li .action .generic-button button.is_friend.remove {
+	padding: 10px 20px;
+}
+
+
+.buddypress-wrap .grid.bp-list>li .action .generic-button button.pending_friend.requested {
+	margin: 0 auto;
+    font-size: 11px;
+    padding: 10px;
+    border: none;
+    background: #252525;
+    color: #fff;
+}
+
+.buddypress-wrap .grid.bp-list>li .action .generic-button button:hover {
+    background-color: #EC008C;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buddypress-wrap .grid.bp-list>li .action .generic-button button.pending_friend.requested:hover {
+	background-color: #EC008C;
+    color: #fff;
+}
+
+.buddypress-wrap .bp-navs li.selected a {
+	background: #00AEEF;
+}
+
+.buddypress-wrap .bp-navs li.selected a:hover {
+	background: #252525;
+	color: #00AEEF;
+}
+
+.buddypress-wrap .bp-navs li:not(.selected) a:hover {
+	background: #EC008C;
+	color: #fff;
+}
+
+.buddypress-wrap .bp-navs ul.subnav li:not(.selected) a:hover {
+	color: #00AEEF;
+}
+
+#buddypress #cover-image-container .headertext {
+	width: 90%;
+    left: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    display: table;
+    right: 0;
+    position: absolute;
+}
+
+ul#friend-list button {
+	max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFF200;
+    color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 50px;
+    display: table;
+    border: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+ul#friend-list button:hover {
+	background-color: #EC008C;
+    color: #fff;
+    cursor: pointer;
+}
+
+table.notifications th {
+	font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.buddypress-wrap .notifications-options-nav #notification-select {
+	width: 200px;
+	text-indent: 0;
+}
+
+.bp-pagination.bottom {
+	padding-bottom: 50px;
+}
+
+.buddypress-wrap .main-navs:not(.dir-navs) li.current a, .buddypress-wrap .main-navs:not(.dir-navs) li.selected a {
+	background: #00AEEF;
+    color: #fff;
+}
+
+.buddypress-wrap .main-navs:not(.dir-navs) li.current a:hover, .buddypress-wrap .main-navs:not(.dir-navs) li.selected a:hover {
+	background: #FFF200;
+    color: #252525;
+}
+
+#buddypress .item {
+	height: auto;
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.buddypress-wrap .standard-form div.submit input {
+	max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFF200;
+    color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 50px;
+    display: inline-block;
+    border: 0;
+    text-transform: uppercase;
+    float: right;
+}
+
+.buddypress-wrap .standard-form div.submit input:hover {
+	background-color: #EC008C;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buddypress-wrap .standard-form div.submit input#bp-messages-reset {
+	background: #252525;
+	color: #fff;
+	margin: 5px 10px auto auto;
+}
+
+.buddypress-wrap .standard-form div.submit input#bp-messages-reset:hover {
+	background-color: #EC008C;
+    color: #fff;
+}
+
+
+.buddypress-wrap .bp-navs.tabbed-links ul li#compose-personal-li.last a {
+	max-width: 100%;
+    margin: -10px auto 0;
+    text-align: center;
+    background-color: #FFF200;
+    color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 0 50px;
+    display: inline-block;
+    border: 0;
+    text-transform: uppercase;
+}
+
+.buddypress-wrap .bp-navs.tabbed-links ul li#compose-personal-li.last a:hover {
+	background-color: #EC008C;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buddypress-wrap .item-body .screen-heading {
+    font-weight: 900;
+}
+
+.buddypress-wrap .profile.edit ul.button-nav {
+    list-style: none;
+    margin: 15px 0 30px;
+    -webkit-padding-start: 0px;
+}
+
+.buddypress-wrap .profile.edit ul.button-nav li a {
+    text-transform: uppercase;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 30px;
+    color: #252525;
+    background: #eaeaea;
+}
+
+.buddypress-wrap .profile.edit ul.button-nav li.current a {
+	background: #00AEEF;
+	color: #fff;
+}
+
+.buddypress-wrap .profile.edit ul.button-nav li a:hover {
+	background: #EC008C;
+	color: #fff;
+}
+
+.buddypress-wrap .profile.edit ul.button-nav li.current a:hover {
+	background: #FFF200;
+	color: #252525;
+}
+
+.buddypress-wrap #profile-edit-form fieldset legend {
+    font-size: inherit;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: brandon-grotesque, sans-serif;
+}
+
+.buddypress-wrap .bp-navs ul.subnav li a {
+	font-size: 14px !important;
+}
+
+@media screen and (max-width: 768px) {
+	.member-front-page {
+	    padding: 25px 0 75px;
+	}
+}
+
+.bp-subnavs ul.subnav li#compose-personal-li {
+	border: none;
+}
+
+#buddypress .groups.mygroups #groups-list .group-desc {
+	display: none;
+}
+
+@media screen and (min-width: 24em) {
+	#buddypress .groups.mygroups #groups-list.grid.groups-list .list-wrap {
+	    min-height: 350px;
+	}
+}
+
+
+
+/**********************
+    USER MENU RESPONSIVE STYLES
+**********************/
+
+/*Strip the ul of padding and list styling*/
+#mobiledashmenu,
+#mobileusermenu,
+#mobilecoursemenu,
+#mobilegroupmenu,
+#mobileshopmenu {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
+    display: none;
+}
+    
+/*Create a horizontal list with spacing*/
+#mobiledashmenu li,
+#mobileusermenu li,
+#mobilecoursemenu li,
+#mobilegroupmenu li,
+#mobileshopmenu li {
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+    padding-top: 5px !important;
+    padding-right: 0px;
+}
+
+/*Style for menu links*/
+#mobiledashmenu li a,
+#mobileusermenu li a,
+#mobilecoursemenu li a,
+#mobilegroupmenu li a,
+#mobileshopmenu li a {
+    display:block;
+    min-width:140px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px !important;
+    background: #00AEEF;
+    padding: 5px 0;
+    border: 2px solid #00AEEF;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: brandon-grotesque, sans-serif;
+    font-style: normal;
+}
+
+/*Hide dropdown links until they are needed*/
+#mobiledashmenu li ul,
+#mobileusermenu li ul,
+#mobilecoursemenu li ul,
+#mobilegroupmenu li ul,
+#mobileshopmenu li ul {
+    display: none;
+}
+
+/*Display the dropdown on hover*/
+#mobiledashmenu li a:hover + .hidden, 
+#mobileusermenu li a:hover + .hidden,
+#mobilecoursemenu li a:hover + .hidden,
+#mobilegroupmenu li a:hover + .hidden,
+#mobileshopmenu li a:hover + .hidden {
+    display: block;
+}
+
+/*Style 'show menu' label button and hide it by default*/
+.show-menu, .show-menu-user, .show-menu-course, .show-menu-group, .show-menu-shop {
+    color: #fff;
+    background: #252525;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: brandon-grotesque, sans-serif;
+    margin-bottom: 0;
+    margin: 5px 0 0;
+    border: 2px solid #252525;
+}
+
+.show-menu:hover, .show-menu-user:hover, .show-menu-course:hover, .show-menu-group:hover, .show-menu-shop:hover {
+    cursor: pointer;
+}
+
+/*Hide checkbox*/
+.mobiledashnav input[type=checkbox],
+.mobileusernav input[type=checkbox],
+.mobilecoursenav input[type=checkbox],
+.mobilegroupnav input[type=checkbox],
+.mobileshopnav input[type=checkbox] {
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+.mobiledashnav input[type=checkbox]:checked ~ #mobiledashmenu,
+.mobileusernav input[type=checkbox]:checked ~ #mobileusermenu,
+.mobilecoursenav input[type=checkbox]:checked ~ #mobilecoursemenu,
+.mobilegroupnav input[type=checkbox]:checked ~ #mobilegroupmenu,
+.mobileshopnav input[type=checkbox]:checked ~ #mobileshopmenu {
+    display: block;
+}
+
+.mobiledashnav input[type=checkbox]:checked ~ .show-menu,
+.mobileusernav input[type=checkbox]:checked ~ .show-menu-user,
+.mobilecoursenav input[type=checkbox]:checked ~ .show-menu-course,
+.mobilegroupnav input[type=checkbox]:checked ~ .show-menu-group,
+.mobileshopnav input[type=checkbox]:checked ~ .show-menu-shop {
+	background: #fff;
+    color: #252525;
+}
+
+#mobiledashmenu li.current-menu-item a,
+#mobileusermenu li.current-menu-item a,
+#mobilecoursemenu li.current-menu-item a,
+#mobilegroupmenu li.current-menu-item a,
+#mobileshopmenu li.current-menu-item a {
+    background: #fff;
+    color: #00AEEF;
+}
+
+/*Responsive Styles*/
+@media screen and (max-width: 768px) {
+        
+    /*Make dropdown links appear inline*/
+    ul#mobiledashmenu,
+    ul#mobileusermenu,
+    ul#mobilecoursemenu,
+    ul#mobilegroupmenu,
+    ul#mobileshopmenu {
+        position: static;
+        display: none;
+    }
+    
+    /*Create vertical spacing*/
+    #mobiledashmenu li,
+    #mobileusermenu li,
+    #mobilecoursemenu li,
+    #mobilegroupmenu li,
+    #mobileshopmenu li {
+        margin-bottom: 1px;
+    }
+        
+    /*Make all menu links full width*/
+    #mobiledashmenu li, #mobiledashmenu li a,
+    #mobileusermenu li, #mobileusermenu li a,
+    #mobilecoursemenu li, #mobilecoursemenu li a,
+    #mobilegroupmenu li, #mobilegroupmenu li a,
+    #mobileshopmenu li, #mobileshopmenu li a {
+        width: 100%;
+    }
+    
+    /*Display 'show menu' link*/
+    .show-menu, .show-menu-user, .show-menu-course, .show-menu-group, .show-menu-shop {
+        display: block;
+    }
+
+    #mobiledashmenu li a .count, #mobileusermenu li a .count, 
+    #mobilecoursemenu li a .count, #mobilegroupmenu li a .count,
+    #mobileshopmenu li a .count {
+    	background: #fff;
+    	border-radius: 50%;
+    	color: #252525;
+    	display: inline-block;
+    	padding: 0 10px;
+    }
+}
+
+
+
+
+
+
+/**********************
+	BBPRESS
+**********************/
+
+#bbpress-forums {
+	overflow: unset;
+	margin: 50px 0;
+}
+
+#bbpress-forums #bbpress-forums {
+	margin: 0;
+}
+
+#bbpress-forums a:hover {
+	color: #EC008C;
+}
+
+body.buddypress .buddypress-wrap h3 {
+	width: 50%;
+    display: table;
+    margin: 1em 0 0;
+}
+
+#bbpress-forums ul.bbp-lead-topic, #bbpress-forums ul.bbp-topics, #bbpress-forums ul.bbp-forums, #bbpress-forums ul.bbp-replies, #bbpress-forums ul.bbp-search-results {
+	border: none;
+}
+
+#bbpress-forums li.bbp-header {
+    background: none;
+}
+
+#bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer {
+	border-top: none;
+}
+
+#bbpress-forums li.bbp-footer {
+	display: none;
+}
+
+#bbpress-forums div.bbp-search-form input#bbp_search {
+	padding: 8px 15px;
+}
+
+#bbpress-forums div.bbp-search-form input[type=submit] {
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+#bbpress-forums ul.bbp-forums {
+	display: table;
+    width: 100%;
+    padding-top: 25px;
+}
+
+#bbpress-forums div.odd, #bbpress-forums ul.odd {
+    background-color: #fff;
+}
+
+#bbpress-forums li.bbp-body ul.forum, #bbpress-forums li.bbp-body ul.topic {
+	border: 1px solid #eaeaea;
+	margin-bottom: 10px;
+	padding: 15px 25px;
+}
+
+#bbpress-forums ul.bbp-forums li.bbp-body ul.bbp-has-subforums li.bbp-forum-info ul.bbp-forums-list li {
+	display: table;
+}
+
+#bbpress-forums ul.forum-titles li,
+#bbpress-forums ul.bbp-replies li.bbp-header,
+#bbpress-forums li.bbp-footer .bbp-reply-author,
+#bbpress-forums li.bbp-footer .bbp-reply-content {
+	font-size: 24px;
+	font-family: brandon-grotesque, sans-serif;
+	font-weight: 900;
+	padding-bottom: 15px;
+	text-transform: uppercase;
+}
+
+#bbpress-forums ul.bbp-replies li.bbp-header {
+	display: none;
+}
+
+#bbpress-forums li.bbp-footer .bbp-reply-author,
+#bbpress-forums li.bbp-footer .bbp-reply-content {
+	padding-bottom: 0;
+}
+
+#bbpress-forums div.bbp-reply-content a.favorite-toggle {
+	font-size: 14px;
+	font-style: italic;
+	color: #252525;
+	text-transform: none;
+	font-family: 'PT Serif', serif;
+}
+
+#bbpress-forums li.bbp-header div.bbp-reply-content span#subscription-toggle {
+	margin-top: 0px;
+    display: table;
+    margin-bottom: 0px;
+}
+
+#bbpress-forums li.bbp-header div.bbp-reply-content span#subscription-toggle a.subscription-toggle {
+	font-size: 14px;
+	font-style: italic;
+	color: #252525;
+	text-transform: none;
+	font-family: 'PT Serif', serif;
+}
+
+#bbpress-forums div.bbp-reply-content a.favorite-toggle:hover,
+#bbpress-forums li.bbp-header div.bbp-reply-content span#subscription-toggle a.subscription-toggle:hover {
+	color: #00AEEF;
+}
+
+#bbpress-forums ul.forum-titles li.bbp-forum-freshness,
+#bbpress-forums ul.forum-titles li.bbp-topic-freshness {
+	padding-right: 25px;
+}
+
+a.bbp-forum-title {
+	color: #252525;
+	font-size: 18px;
+}
+
+li.bbp-forum-topic-count, li.bbp-forum-reply-count,
+li.bbp-topic-voice-count, li.bbp-topic-reply-count {
+	color: #252525;
+	font-size: 18px;
+}
+
+li.bbp-forum-freshness a,
+li.bbp-topic-freshness a {
+	color: #252525;
+	font-size: 18px;
+}
+
+#bbpress-forums a.bbp-forum-title:hover, 
+#bbpress-forums li.bbp-forum-freshness a:hover,
+#bbpress-forums li.bbp-topic-freshness a:hover {
+	color: #00AEEF;
+}
+
+li.bbp-forum-freshness, 
+li.bbp-topic-freshness {
+	float: right;
+}
+
+li.bbp-forum-freshness a.bbp-author-name,
+body #buddypress li.bbp-forum-freshness a.bbp-author-name,
+body #buddypress li.bbp-topic-freshness a.bbp-author-name,
+body li.bbp-topic-freshness p.bbp-topic-meta .bbp-topic-freshness-author a.bbp-author-name {
+	color: #252525;
+	font-size: 14px;
+	font-style: italic;
+	text-decoration: underline;
+	padding-bottom: 0;
+	font-weight: 600;
+}
+
+#bbpress-forums li.bbp-forum-freshness a.bbp-author-name:hover,
+body #buddypress li.bbp-forum-freshness a.bbp-author-name:hover,
+body #buddypress li.bbp-topic-freshness a.bbp-author-name:hover,
+body li.bbp-topic-freshness p.bbp-topic-meta .bbp-topic-freshness-author a.bbp-author-name:hover {
+	color: #00AEEF;
+}
+
+#bbpress-forums p.bbp-topic-meta img.avatar {
+	width: 25px;
+	height: 25px;
+	margin-bottom: 0;
+}
+
+#bbpress-forums .bbp-forum-info .bbp-forum-content {
+	font-size: 14px;
+}
+
+div.bbp-template-notice.info {
+    border: #cee1ef 1px solid;
+    background-color: #abe1fb;
+    border-radius: 0px
+}
+
+body #buddypress div.bbp-template-notice a {
+	color: #252525;
+	text-decoration: underline;
+	padding-bottom: 0;
+}
+
+body #buddypress div.bbp-template-notice a:hover {
+	color: #EC008C;
+}
+
+#bbpress-forums div.bbp-template-notice img.avatar {
+	margin-bottom: 0;
+	width: 25px;
+    height: 25px;
+}
+
+#subscription-toggle {
+	float: right;
+    margin-top: -30px;
+    display: table;
+    margin-bottom: 25px;
+}
+
+#subscription-toggle a {
+	max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFF200;
+    color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 50px;
+    display: table;
+    border: 0;
+    text-transform: uppercase;
+    float: none;
+}
+
+#subscription-toggle a:hover {
+    background-color: #EC008C;
+    color: #fff;
+    cursor: pointer;
+}
+
+#bbpress-forums li.bbp-topic-title a {
+	color: #252525;
+	font-size: 18px;
+}
+
+#bbpress-forums li.bbp-topic-title a:hover {
+	color: #00AEEF;
+}
+
+.bbp-topic-started-by {
+	font-size: 14px;
+	font-style: italic;
+}
+
+#bbpress-forums li.bbp-topic-title .bbp-topic-started-by a {
+	font-size: 14px;
+	font-style: italic;
+	text-decoration: underline;
+	font-weight: 600;
+}
+
+#bbpress-forums .bbp-topic-form,
+#bbpress-forums .bbp-reply-form {
+	padding-top: 30px;
+    display: table;
+    width: 100%;
+}
+
+#bbpress-forums .bbp-topic-form fieldset.bbp-form legend,
+#bbpress-forums .bbp-reply-form fieldset.bbp-form legend {
+	color: #e9e9e9;
+    margin-bottom: -5px;
+    line-height: 1;
+    font-family: brandon-grotesque, sans-serif;
+    font-style: normal;
+    font-size: 21px;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: auto;
+    padding: 0;
+}
+
+.buddypress .buddypress-wrap .bbp-submit-wrapper button,
+.bbp-submit-wrapper button {
+	max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #FFF200;
+    color: #252525;
+    border-radius: 10px;
+    font-family: brandon-grotesque, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 10px 50px;
+    display: table;
+    border: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+   	-moz-appearance: none;
+   	appearance: none;
+}
+
+.buddypress .buddypress-wrap .bbp-submit-wrapper button:hover,
+.bbp-submit-wrapper button:hover {
+    background-color: #EC008C;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buddypress .buddypress-wrap .bbp-submit-wrapper button:focus,
+.bbp-submit-wrapper button:focus {
+    background-color: #252525;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buddypress .buddypress-wrap .bbp-submit-wrapper button:focus:after,
+.buddypress .buddypress-wrap .bbp-submit-wrapper button:active:after,
+.bbp-submit-wrapper button:focus:after,
+.bbp-submit-wrapper button:active:after {
+   content: 'Saving...';
+   display: block;
+}
+
+#bbpress-forums fieldset.bbp-form p {
+	padding-bottom: 0;
+	width: 30%;
+    display: inline-block;
+    margin: 0 2% 0 0;
+}
+
+#bbpress-forums fieldset.bbp-form p input {
+	width: 100%;
+}
+
+#bbpress-forums fieldset.bbp-form p input#bbp_topic_subscription {
+	width: 10%;
+}
+
+#bbpress-forums fieldset.bbp-form p select {
+	width: 100%;
+	padding: 3px 0;
+}
+
+#bbpress-forums fieldset.bbp-form div.bbp-template-notice p {
+	width: 100%;
+	margin: auto;
+	display: table;
+}
+
+#bbpress-forums .bbp-breadcrumb {
+	display: none;
+}
+
+#bbpress-forums div.bbp-reply-header {
+	background-color: #eaeaea;
+	border-top: none;
+}
+
+#bbpress-forums li.bbp-body .topic.hentry,
+#bbpress-forums li.bbp-body div.reply.hentry {
+	border: 2px solid #eaeaea;
+	margin-bottom: 10px;
+}
+
+.bbp-reply-header .bbp-meta {
+	font-style: italic;
+	color: #252525;
+	font-size: 14px;
+	padding: 0 15px;
+}
+
+.bbp-reply-header .bbp-meta span.bbp-admin-links {
+	color: #252525;
+}
+
+.bbp-reply-header .bbp-meta span.bbp-admin-links a {
+	font-style: italic;
+	color: #252525;
+	font-size: 14px;
+	text-transform: unset;
+}
+
+.bbp-reply-header .bbp-meta a.bbp-reply-permalink {
+	color: #252525;
+}
+
+#bbpress-forums .topic.hentry div.bbp-reply-author,
+#bbpress-forums .reply.hentry div.bbp-reply-author {
+	border-right: 1px solid #eaeaea;
+}
+
+#bbpress-forums div.bbp-reply-author img.avatar {
+	border-radius: 50%;
+}
+
+#bbpress-forums div.bbp-topic-author a.bbp-author-name, 
+#bbpress-forums div.bbp-reply-author a.bbp-author-name {
+	color: #252525;
+	font-size: 14px;
+	line-height: 1.3;
+	padding-top: 15px;
+	font-style: italic;
+}
+
+#bbpress-forums div.bbp-topic-author a.bbp-author-name:hover, 
+#bbpress-forums div.bbp-reply-author a.bbp-author-name:hover {
+	color: #00AEEF;
+}
+
+@media screen and (max-width: 768px) {
+	#bbpress-forums h3 {
+		width: 100%;
+	}
+
+	#subscription-toggle {
+	    float: none;
+	    margin-top: 0px;
+	    width: 100%;
+	}
+
+	#bbpress-forums ul.forum-titles li, #bbpress-forums ul.bbp-replies li.bbp-header, #bbpress-forums li.bbp-footer .bbp-reply-author, #bbpress-forums li.bbp-footer .bbp-reply-content {
+		font-size: 12px;
+		font-weight: 600;
+		padding-bottom: 0;
+	}
+
+	#bbpress-forums li.bbp-body ul.forum, #bbpress-forums li.bbp-body ul.topic {
+	    padding: 5px 8px;
+	}
+
+	a.bbp-forum-title, #bbpress-forums li.bbp-topic-title a {
+		font-size: 14px;
+	}
+
+	li.bbp-forum-topic-count, li.bbp-forum-reply-count, 
+	li.bbp-topic-voice-count, li.bbp-topic-reply-count {
+	    font-size: 14px;
+	}
+
+	li.bbp-forum-freshness a, li.bbp-topic-freshness a {
+		font-size: 14px;
+	}
+
+	li.bbp-forum-freshness .bbp-topic-freshness-author, li.bbp-topic-freshness .bbp-topic-freshness-author {
+		display: none;
+	}
+
+	#bbpress-forums fieldset.bbp-form p {
+		width: 100%;
+	}
+
+	#bbpress-forums div.bbp-topic-author a.bbp-author-name, #bbpress-forums div.bbp-reply-author a.bbp-author-name {
+		padding-top: 0;
+	}
+
+	div.bbp-search-form input, div.bbp-search-form button {
+		padding: 10px 50px;
+	}
+}
+
+
+
+
+
+
+/*************************/
+
+.yz-widget-content {
+	border: 1px solid #eaeaea;
+    width: 100%;
+    display: table;
+    padding: 25px;
+}
+
+
+
+
+
+
+
+
+
+.mycred-rank-progress{}
+.mycred-rank-progress h3.rank-progress-label{}
+.mycred-rank-progress span.current-rank{}
+.mycred-rank-progress span.next-rank{}
+.mycred-rank-progress span.points-progress{}
+
+/* HTML 5 Progress Bar */
+progress[value]  {
+  /* Reset the default appearance */
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+
+  /* Get rid of default border in Firefox. */
+  border: none;
+
+  /* Dimensions */
+  width: 100%; height: 2em;
+
+  /* For IE10 */
+  color: red; 
+}
+
+/* HTML 5 Progress Bar Container */
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+}
+
+/* HTML 5 Progress Bar Value */
+progress[value]::-webkit-progress-value {
+	background-color: red;
 }

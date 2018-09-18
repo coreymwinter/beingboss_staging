@@ -28,8 +28,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="col-md-7 footer-subscribe-right">
 					<div class="pagesection">
 						<p class="brandon large">CREATIVE + ENTREPRENEUR</p>
-						<p class="xmedium italic">Podcast notifications + episode extras to help you do the work.</p>
-						<?php if (function_exists('tve_leads_form_display')) { tve_leads_form_display(0, 9514); } ?>
+						<p class="xmedium italic">Get the scoop on how to be more boss.</p>
+						<?php echo do_shortcode('[content_block id=11678]'); ?>
+						<p class="center small padtop15">Subscribing indicates your consent to our <a href="/terms" target="_blank" class="blacklink underline">Terms of Use</a> &amp; <a href="/privacy" target="_blank" class="blacklink underline">Privacy Policy.</a></p>
 					</div>
 				</div><!--col end -->
 

@@ -27,15 +27,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<header class="entry-header">
 
 								<figure class="headersection">
-										<a class="home-header-link" href="/quiz"></a>
+										<a class="home-header-link" href="/quiz/values"></a>
 										<div class="container">
 											<div class="headertext">
-												<a href="/quiz">
-													<h1 class="white giant brandon">WHAT KIND OF BOSS ARE YOU?</h1>
+												<a href="/quiz/values">
+													<img src="/wp-content/uploads/2018/08/WhatDoYouValue.png">
 
-													<p class="white large italic serif">Understand your strengths + challenges<br />as a side-hustler, freelancer, or business owner.</p>
+													<p class="white large italic serif">Align your actions with what's most important.<br />Then create and grow with ease.</p>
 												</a>
-												<a class="button-yellow" href="/quiz">TAKE THE QUIZ</a>
+												<a class="button-yellow" href="/quiz/values">TAKE THE QUIZ</a>
 											</div>
 										</div>
 								</figure>
@@ -92,7 +92,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											<div class="row">
 												<div class="col-md-4"><a href="/podcast"><img src="/wp-content/themes/beingboss2018/img/BB_Logo_Podcast.jpg"></a></div>
 												<div class="col-md-4"><a href="/10minutes"><img src="/wp-content/themes/beingboss2018/img/BB_Logo_10Minutes.jpg"></a></div>
-												<div class="col-md-4"><a href="/making-a-business"><img src="/wp-content/themes/beingboss2018/img/BB_Logo_MakingABusiness.jpg"></a></div>
+												<div class="col-md-4"><a href="/making-a-business"><img src="/wp-content/themes/beingboss2018/img/MakingABiz_Avatar_2.jpg"></a></div>
 											</div>
 										</div>
 									</div>

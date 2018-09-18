@@ -145,4 +145,5 @@ get_header( 'squeeze' );
 
 </div><!-- Wrapper end -->
 <script src="//events.genndi.com/register.evergreen.extra.js" language="javascript" type="text/javascript" async></script>
+<script src="//events.genndi.com/register.box.js" language="javascript" type="text/javascript"></script>
 <?php get_footer( 'squeeze' ); ?>

@@ -15,14 +15,11 @@ $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
-<div class="wrapper" id="archive-wrapper">
+<div class="wrapper" id="archive-wrapper" style="padding: 50px 0 75px;">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
-
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
 
 			<main class="site-main" id="main">
 
@@ -30,26 +27,39 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 					<header class="page-header">
 						<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_title( '<h1 class="page-title center">', '</h1>' );
+						echo '<hr class="even">';
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
+					<div class="archivecontainer">
+						<?php /* Start the Loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+							<article class="archiveitem" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+								<?php if ( has_post_thumbnail() ) : ?>
+									<div class="archiveitemimage">
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('archive-thumb'); ?></a>
+									</div>
+								<?php endif; ?>
+									<div class="archiveitemcontent">
+										<?php if ( 'post' == get_post_type() ) : ?>
+											<img src="/wp-content/themes/beingboss2018/img/BBClubhouse_SecretEpisodes.png">
+										<?php else : ?>
+											<img src="/wp-content/themes/beingboss2018/img/BB_Icon_Paper.png">
+										<?php endif; ?>
+										<h5><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span class="archiveitemtitle"> <?php the_title(); ?></span></a></h5>
+										<p class="archiveitemauthor">BY <?php the_author(); ?></p>
+										<?php if ( 'post' == get_post_type() ) : ?>
+											<a href="<?php the_permalink(); ?>" class="archiveitemreadmore">LISTEN NOW >></a>
+										<?php else : ?>
+											<a href="<?php the_permalink(); ?>" class="archiveitemreadmore">READ NOW >></a>
+										<?php endif; ?>
+									</div> 
+							</article>
 
-						<?php
-
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
-						?>
-
-					<?php endwhile; ?>
-
+						<?php endwhile; ?>
+					</div>
 				<?php else : ?>
 
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
@@ -63,12 +73,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 		</div><!-- #primary -->
 
-		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
-
-			<?php get_sidebar( 'right' ); ?>
-
-		<?php endif; ?>
 
 	</div> <!-- .row -->
 

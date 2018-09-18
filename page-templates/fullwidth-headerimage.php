@@ -32,7 +32,7 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 
 							<?php $header_image = get_post_meta( $postid, 'bbpage_header_image', true ); ?>
 							<?php $header_text = get_post_meta( $postid, 'bbpage_header_text', true ); ?>							
-
+							<?php $page_content = get_post_meta( $postid, 'bbpage_content', true ); ?>
 
 							<header class="entry-header">
 
@@ -47,8 +47,11 @@ $pagecss = get_post_meta( $postid, 'bbpage_page_css', true );
 							</header><!-- .entry-header -->
 
 							<div class="entry-content" style="padding-top:<?php echo $toppadding; ?>px">
-
-								<?php the_content(); ?>
+								<?php if ( $page_content ) {
+										echo $page_content;
+									} else {
+										the_content(); 
+									} ?>
 
 							</div><!-- .entry-content -->
 
